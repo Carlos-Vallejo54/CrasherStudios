@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100vh;
+    background: linear-gradient(to top, #0a0a2a 50%, #0a0a2a 70%, #87CEEB 100%);
+    background-size: 100% 200%;
+    animation: skyTransition 12s infinite alternate;
+    position: relative;
+}
+
+.character {
+    width: 900px;
+    height: auto;
+    position: absolute;
+    animation: riseAndFall 12s infinite alternate;
+}
+
+.sun {
+    width: 200px;
+    height: auto;
+    position: absolute;
+    top: -50px;
+    transform: translateX(-50%);
+    animation: sunRiseAndFall 12s infinite alternate;
+    filter: hue-rotate(200deg) brightness(1.2) contrast(1.1); /* Adds a blue tint */
+}
+
+/* Navigation Menu */
+.menu {
+    position: absolute;
+    top: 28%; /* Position above "Praise the Sun" */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 120px; /* Increased spacing between items */
+    font-family: 'Jacquard 12', cursive;
+    font-size: 30px;
+    color: #ffffff; /* White text */
+    padding: 10px 30px;
+    border: 3px solid #0a0a2a; /* Border added */
+    border-radius: 10px;
+    opacity: 1; /* Always visible */
+}
+
+/* Menu Links */
+.menu a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #FFD700; /* Golden glow effect on hover */
+}
+
+/* Praise the Sun text */
+.praise-text {
+    font-family: 'Jacquard 12', cursive;
+    font-size: 300px;
+    color: #0a0a2a; /* Matches midnight blue */
+    position: absolute;
+    top: 24%;
+    text-align: center;
+    opacity: 0;
+    animation: textFade 12s infinite alternate;
+}
+
+/* Keyframes for character rising and falling */
+@keyframes riseAndFall {
+    0% { transform: translateY(150%); }
+    10% { transform: translateY(0%); }
+    92% { transform: translateY(0%); }
+    100% { transform: translateY(150%); }
+}
+
+/* Keyframes for the sun rising and falling */
+@keyframes sunRiseAndFall {
+    0% { transform: translateY(-250px); opacity: 0; }
+    10% { transform: translateY(100px); opacity: 1; }
+    92% { transform: translateY(100px); opacity: 1; }
+    100% { transform: translateY(-250px); opacity: 0; }
+}
+
+/* Keyframes for the text and menu fading in and out */
+@keyframes textFade {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    92% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Background color transition matching the sun's movement */
+@keyframes skyTransition {
+    0% { background-position: 100% 100%; }
+    10% { background-position: 100% 0%; }
+    92% { background-position: 100% 0%; }
+    100% { background-position: 100% 100%; }
+}
