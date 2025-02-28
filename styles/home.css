@@ -1,0 +1,62 @@
+/* General Page Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: white;
+    text-align: center;
+}
+
+/* Welcome Section */
+.welcome {
+    padding: 50px 20px;
+    font-size: 3rem;
+}
+
+/* Apply Jacquard 12 font */
+.welcome h1, .quote {
+    font-family: "Jacquard 12", sans-serif;
+}
+
+.welcome p {
+    font-family: "Jacquard 12", sans-serif;
+}
+
+/* Swiper Carousel */
+.swiper-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+/* Banner (full image size) */
+.banner {
+    width: 100%;
+    height: 500px;
+    background-size: cover !important; /* Maintain aspect ratio */
+    background-position: center;
+    background-repeat: no-repeat !important;
+}
+
+/* Quote positioned below each banner */
+.quote {
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+    font-family: "Jacquard 12", sans-serif;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Navigation Buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    color: white !important;
+}
+
+/* Pagination Dots */
+.swiper-pagination-bullet {
+    background: white !important;
+}
