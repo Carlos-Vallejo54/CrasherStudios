@@ -75,6 +75,59 @@ nav ul li a:hover {
     z-index: 1001;
 }
 
+/* Mobile Navigation Styles */
+.nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 200px;
+    z-index: 100;
+}
+
+.nav-menu.active {
+    display: flex;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+/* Hide navigation menu by default on small screens */
+nav {
+    display: none;
+}
+
+/* Display navigation menu when 'active' class is added */
+nav.active {
+    display: block;
+}
+
+/* Media query to handle larger screens */
+@media (min-width: 768px) {
+    nav {
+        display: flex; /* or your desired display style */
+    }
+    .menu-toggle {
+        display: none; /* Hide menu toggle button on larger screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .nav-menu {
+        display: none;
+    }
+    .nav-menu.active {
+        display: flex;
+    }
+}
+
 /* Responsive Menu Fix */
 @media screen and (max-width: 1024px) {
     .menu-toggle {
