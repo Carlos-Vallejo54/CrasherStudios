@@ -19,7 +19,7 @@ body {
 }
 
 .welcome p {
-    font-family: "Unbounded", Sans-serif;
+    font-family: "Jacquard 12", sans-serif;
     font-size: 1.5rem;
 }
 
@@ -52,12 +52,66 @@ body {
 }
 
 /* Navigation Buttons */
-.swiper-button-next,
-.swiper-button-prev {
+.swiper-button-next, .swiper-button-prev {
     color: white !important;
 }
 
 /* Pagination Dots */
 .swiper-pagination-bullet {
     background: white !important;
+}
+
+/* Left-Aligned Section Below the Banners */
+.custom-section, .custom-section p {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.custom-section h2, .featured-projects h2, p {
+    font-size: 4rem;
+    font-family: "Jacquard 12", sans-serif;
+    color: white;
+}
+
+.custom-section p {
+    font-size: 2rem;
+    color: white;
+    max-width: 1200px;
+    text-align: center;
+}
+
+/* Ensure Featured Projects Section is Visible */
+.featured-projects {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto; /* Adds space above and below */
+
+    color: white;
+}
+
+.featured-projects h2 {
+    font-size: 4rem;
+    font-family: "Jacquard 12", sans-serif;
+    margin: 40px 0;
+    color: white;
+    text-align: left;
+}
+
+.featured-projects p {
+    font-size: 2rem;
+    color: white;
+    max-width: 1200px;
+    text-align: left;
+}
+
+.featured-projects a {
+    color: #1e90ff; /* Link color */
+    text-decoration: none;
+}
+
+.featured-projects a:hover {
+    text-decoration: underline;
 }
