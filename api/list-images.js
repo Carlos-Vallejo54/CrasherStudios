@@ -2,10 +2,11 @@ import fs from 'fs';
 import path from 'path';
 
 export default function handler(req, res) {
-    const imagesDir = path.join(process.cwd(), 'public/images/Gallery/Normal Display');
+    const imagesDir = path.resolve('./public/images/Gallery/Normal Display');
 
     fs.readdir(imagesDir, (err, files) => {
         if (err) {
+            console.error("Error reading directory:", err);
             return res.status(500).json({ error: 'Unable to read images directory' });
         }
 
