@@ -30,7 +30,7 @@ p{
 /* Cover Flow Container */
 .coverflow-container {
     width: 100%;
-    max-width: 900px;
+    max-width: 60%;
     margin: 40px auto;
 }
 
