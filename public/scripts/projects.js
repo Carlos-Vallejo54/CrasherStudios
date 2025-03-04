@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", async function () {
     const projectsGrid = document.getElementById("projects-grid");
+    const supportedImageFormats = ["png", "jpg", "jpeg", "webp", "gif"]; // Supported formats
 
     async function loadProjects() {
         try {
@@ -13,10 +14,10 @@ document.addEventListener("DOMContentLoaded", async function () {
                 return;
             }
 
-            data.projects.forEach(project => {
+            data.projects.forEach(async (project) => {
                 const encodedProject = encodeURIComponent(project);
                 const projectFolder = `../images/Project/${encodedProject}`;
-                const mainImage = `${projectFolder}/${encodedProject} Main.png`;
+                const mainImage = await findExistingImage(`${projectFolder}/${encodedProject} Main`);
 
                 console.log(`Checking image: ${mainImage}`);
 
@@ -44,6 +45,19 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     }
 
+    async function findExistingImage(basePath) {
+        for (let ext of supportedImageFormats) {
+            let imgPath = `${basePath}.${ext}`;
+            try {
+                const response = await fetch(imgPath, { method: "HEAD" });
+                if (response.ok) return imgPath;
+            } catch (error) {
+                console.warn(`Image not found: ${imgPath}`);
+            }
+        }
+        return "../images/fallback.png"; // Return fallback if no image is found
+    }
+
     async function openProjectPopup(folder, project) {
         const popup = document.getElementById("project-popup");
         const popupTitle = document.getElementById("popup-title");
@@ -64,13 +78,13 @@ document.addEventListener("DOMContentLoaded", async function () {
             popupImages.innerHTML = "";
             let imgIndex = 1;
             while (true) {
-                const imgPath = `${folder}/${project} ${imgIndex}.png`;
-                const imgExists = await fetch(imgPath, { method: "HEAD" });
-
-                if (!imgExists.ok) break;
+                const baseImgPath = `${folder}/${project} ${imgIndex}`;
+                const imagePath = await findExistingImage(baseImgPath);
+                
+                if (imagePath === "../images/fallback.png") break; // Stop if no more images found
 
                 let imgElement = document.createElement("img");
-                imgElement.src = imgPath;
+                imgElement.src = imagePath;
                 popupImages.appendChild(imgElement);
                 imgIndex++;
             }
