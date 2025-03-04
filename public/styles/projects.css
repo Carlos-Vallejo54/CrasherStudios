@@ -1,4 +1,4 @@
-/* Font Import */
+/* General Styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -10,8 +10,12 @@ body {
 .projects-title {
     text-align: center;
     font-size: 3rem;
-    margin-top: 20px;
+    margin: 20px auto;
     font-family: "Jacquard 12", sans-serif;
+    background: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
 }
 
 /* Projects Grid */

@@ -1,30 +1,36 @@
 async function loadProjects() {
     const projectsGrid = document.getElementById("projects-grid");
 
-    // Fetch project folders dynamically
-    const response = await fetch("public/images/Project/");
-    const projects = await response.json();
+    try {
+        const response = await fetch("/api/projects");
+        const data = await response.json();
 
-    projects.forEach(async (project) => {
-        const projectFolder = `public/images/Project/${project}`;
-        const mainImage = `${projectFolder}/${project} Main.png`;
+        if (!data.projects) {
+            console.error("No projects found.");
+            return;
+        }
 
-        // Create project card
-        const projectItem = document.createElement("div");
-        projectItem.classList.add("project-item");
+        data.projects.forEach(async (project) => {
+            const projectFolder = `public/images/Project/${project}`;
+            const mainImage = `${projectFolder}/${project} Main.png`;
 
-        projectItem.innerHTML = `
-            <img src="${mainImage}" alt="${project}">
-            <h3>${project}</h3>
-        `;
+            const projectItem = document.createElement("div");
+            projectItem.classList.add("project-item");
 
-        // Click event to open popup
-        projectItem.addEventListener("click", async () => {
-            await loadProjectDetails(projectFolder, project);
+            projectItem.innerHTML = `
+                <img src="${mainImage}" alt="${project}">
+                <h3>${project}</h3>
+            `;
+
+            projectItem.addEventListener("click", async () => {
+                await loadProjectDetails(projectFolder, project);
+            });
+
+            projectsGrid.appendChild(projectItem);
         });
-
-        projectsGrid.appendChild(projectItem);
-    });
+    } catch (error) {
+        console.error("Failed to load projects:", error);
+    }
 }
 
 async function loadProjectDetails(folder, project) {
@@ -80,8 +86,7 @@ document.querySelector(".close-popup").addEventListener("click", () => {
     document.getElementById("project-popup").style.display = "none";
 });
 
-// Load Header & Footer like in gallery.html
 document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("header").innerHTML = '<script src="../scripts/loadHeaderFooter.js"></script>';
-    document.getElementById("footer").innerHTML = '<script src="../scripts/loadHeaderFooter.js"></script>';
+    loadHeaderFooter();
+    loadProjects();
 });
