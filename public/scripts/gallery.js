@@ -55,17 +55,21 @@ document.addEventListener("DOMContentLoaded", async function () {
             effect: 'coverflow',
             grabCursor: true,
             centeredSlides: true,
-            slidesPerView: 'auto',
+            slidesPerView: 3,  
             coverflowEffect: {
                 rotate: 50,
                 stretch: 0,
-                depth: 100,
+                depth: 300, 
                 modifier: 1,
                 slideShadows: true,
             },
-            loop: true,
+            loop: true, 
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
         });
-    }
+    }    
 
     function openLightbox(src, filename) {
         const cleanFilename = filename.replace(/\.[^/.]+$/, ""); // Remove file extension
