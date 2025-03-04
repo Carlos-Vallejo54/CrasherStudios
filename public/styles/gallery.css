@@ -17,16 +17,16 @@ body {
     flex-wrap: wrap;
     width: 100%;
     max-width: 1200px;
-    margin: 50px auto;  /* Adds 50px spacing above and below */
+    margin: 100px auto;  
 }
 
-/* Center images and ensure proper spacing */
+
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  /* Dynamic grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  
     gap: 20px;
-    justify-items: center;  /* Center items horizontally */
-    align-items: center;  /* Center items vertically */
+    justify-items: center; 
+    align-items: center; 
     width: 100%;
 }
 
@@ -52,7 +52,7 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.9);
     display: flex;
-    flex-direction: column;  /* Stack items vertically */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 1000;
@@ -75,8 +75,7 @@ body {
     background: rgba(0, 0, 0, 0.5);
     padding: 10px;
     border-radius: 5px;
-    margin-top: 15px;  /* Spacing above */
-    margin-bottom: 30px; /* NEW: Adds space below */
+    margin-bottom: 75px; 
 }
 
 .lightbox .close {
