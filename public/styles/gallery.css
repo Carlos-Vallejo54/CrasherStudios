@@ -9,6 +9,12 @@ body {
     min-height: 100vh;
 }
 
+h1 {
+    font-family: "Jacquard 12", sans-serif;
+    padding: 50px 20px;
+    font-size: 3rem;
+}
+
 /* Cover Flow Container */
 .coverflow-container {
     width: 100%;
@@ -59,7 +65,7 @@ body {
     text-align: center;
     font-size: 1rem;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: "Jacquard 12", sans-serif;
     background: rgba(0, 0, 0, 0.6);
     padding: 5px;
     border-radius: 5px;
