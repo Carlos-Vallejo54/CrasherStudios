@@ -22,14 +22,20 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             // Load Featured Images into Cover Flow
             featuredImages.forEach(file => {
+                let slide = document.createElement("div");
+                slide.classList.add("swiper-slide");
+
                 let img = document.createElement("img");
                 img.src = `/images/Gallery/Featured/${file}`;
                 img.alt = file;
                 img.onclick = () => openLightbox(img.src, file);
 
-                let slide = document.createElement("div");
-                slide.classList.add("swiper-slide");
+                let caption = document.createElement("div");
+                caption.classList.add("carousel-caption");
+                caption.textContent = file.replace(/\.[^/.]+$/, ""); // Remove file extension
+
                 slide.appendChild(img);
+                slide.appendChild(caption);
                 coverflowGallery.appendChild(slide);
             });
 
