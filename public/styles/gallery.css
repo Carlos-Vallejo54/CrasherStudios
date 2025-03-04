@@ -9,6 +9,89 @@ body {
     min-height: 100vh;
 }
 
+h1 {
+    text-align: center;
+    font-family: "Jacquard 12", sans-serif;
+    padding: 50px 20px;
+    font-size: 5rem;
+}
+h2 {
+    text-align: center;
+    font-family: "Jacquard 12", sans-serif;
+    padding: 50px 20px;
+    font-size: 7rem;
+}
+p{
+    text-align: center;
+    font-family: "Jacquard 12", sans-serif;
+    font-size: 3rem;
+}
+
+/* Cover Flow Container */
+.coverflow-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+/* Swiper Container */
+.swiper-container {
+    width: 100%;
+    height: 320px;
+    position: relative;
+}
+
+/* Swiper Slides */
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Swiper Images */
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.swiper-slide-shadow-left, .swiper-slide-shadow-right {
+    display: none !important;  
+}
+
+.swiper-slide-prev, .swiper-slide-next {
+    opacity: 0.75; 
+}
+
+.swiper-slide:not(.swiper-slide-active):not(.swiper-slide-prev):not(.swiper-slide-next) {
+    opacity: 0;  
+}
+
+/* Image Caption Under Carousel */
+.carousel-caption {
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+    font-family: "Jacquard 12", sans-serif;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Swiper Navigation Buttons */
+.swiper-button-prev, .swiper-button-next {
+    color: white !important; 
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
 /* Center the entire gallery container */
 .gallery-container {
     display: flex;
