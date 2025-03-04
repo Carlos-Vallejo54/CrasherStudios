@@ -10,27 +10,35 @@ body {
 }
 
 .gallery-container {
+    display: flex;
+    justify-content: center;  
+    align-items: center;  
+    flex-wrap: wrap;  
     width: 90%;
     max-width: 1200px;
-    margin-top: 80px; /* Same as home.css */
-    flex-grow: 1; /* Expands content to fill space */
+    margin-top: 80px; 
 }
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px;
+    justify-items: center; 
+    align-items: center; 
+    width: 100%;
 }
 
 .gallery img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
-    cursor: pointer;
-    transition: transform 0.2s;
+    display: block;
+    object-fit: contain; 
+    border-radius: 10px; 
+    transition: transform 0.2s ease-in-out;
 }
 
 .gallery img:hover {
-    transform: scale(1.02);
+    transform: scale(1.25);
 }
 
 /* Lightbox styles */
@@ -50,6 +58,17 @@ body {
 .lightbox img {
     max-width: 90%;
     max-height: 90%;
+}
+
+/* Lightbox filename caption */
+.lightbox-caption {
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+    font-family: "Jacquard 12", sans-serif;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 5px;
 }
 
 .lightbox .close {
