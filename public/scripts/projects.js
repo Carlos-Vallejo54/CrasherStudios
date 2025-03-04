@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async function () {
     const projectsGrid = document.getElementById("projects-grid");
-    const supportedImageFormats = ["png", "jpg", "jpeg", "webp", "gif"]; // Supported formats
+    const supportedImageFormats = ["png", "jpg", "jpeg", "webp", "gif"]; 
 
     async function loadProjects() {
         try {
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 console.warn(`Image not found: ${imgPath}`);
             }
         }
-        return "../images/fallback.png"; // Return fallback if no image is found
+        return "../images/fallback.png"; 
     }
 
     async function openProjectPopup(folder, project) {
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 const baseImgPath = `${folder}/${project} ${imgIndex}`;
                 const imagePath = await findExistingImage(baseImgPath);
                 
-                if (imagePath === "../images/fallback.png") break; // Stop if no more images found
+                if (imagePath === "../images/fallback.png") break; 
 
                 let imgElement = document.createElement("img");
                 imgElement.src = imagePath;
