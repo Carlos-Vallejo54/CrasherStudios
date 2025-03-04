@@ -2,19 +2,29 @@ document.addEventListener("DOMContentLoaded", async function () {
     const gallery = document.getElementById("gallery");
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxCaption = document.getElementById("lightbox-caption"); // New caption element
 
     const imageFolder = "/images/Gallery/Normal Display/";
 
     async function loadGallery() {
         try {
             const response = await fetch("/api/list-images");
+            if (!response.ok) {
+                throw new Error("Failed to fetch images");
+            }
+
             const data = await response.json();
-            
-            data.images.forEach(file => {
+            let images = data.images;
+
+            // Shuffle images randomly
+            images = images.sort(() => Math.random() - 0.5);
+
+            // Populate gallery
+            images.forEach(file => {
                 let img = document.createElement("img");
                 img.src = `${imageFolder}${file}`;
-                img.alt = "Gallery Image";
-                img.onclick = () => openLightbox(img.src);
+                img.alt = file;
+                img.onclick = () => openLightbox(img.src, file);
                 gallery.appendChild(img);
             });
         } catch (error) {
@@ -22,10 +32,12 @@ document.addEventListener("DOMContentLoaded", async function () {
         }
     }
 
-    function openLightbox(src) {
+    function openLightbox(src, filename) {
+        const cleanFilename = filename.replace(/\.[^/.]+$/, ""); 
         lightboxImg.src = src;
+        lightboxCaption.textContent = cleanFilename; 
         lightbox.classList.remove("hidden");
-    }
+    }    
 
     window.closeLightbox = function () {
         lightbox.classList.add("hidden");

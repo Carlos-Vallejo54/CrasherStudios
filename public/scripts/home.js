@@ -15,3 +15,16 @@ document.addEventListener("DOMContentLoaded", function () {
         },
     });
 });
+
+// Lightbox Functions for Banners
+function openLightbox(src) {
+    const lightbox = document.getElementById("banner-lightbox");
+    const lightboxImg = document.getElementById("banner-lightbox-img");
+
+    lightboxImg.src = src;
+    lightbox.classList.remove("hidden");
+}
+
+function closeLightbox() {
+    document.getElementById("banner-lightbox").classList.add("hidden");
+}

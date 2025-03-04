@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery | Crasher Studios</title>
     <link rel="stylesheet" href="../styles/gallery.css">
-    <script defer src="../scripts/gallery.js"></script>    
+    <script defer src="../scripts/loadHeaderFooter.js"></script>  
+    <script defer src="../scripts/gallery.js"></script> 
 </head>
 <body>
+    <div id="header"></div>  
+
     <div class="gallery-container">
         <div class="gallery" id="gallery"></div>
     </div>
@@ -16,6 +19,9 @@
     <div id="lightbox" class="lightbox hidden">
         <span class="close" onclick="closeLightbox()">&times;</span>
         <img id="lightbox-img" src="" alt="Preview">
+        <div id="lightbox-caption" class="lightbox-caption"></div> <!-- New filename caption -->
     </div>
+
+    <div id="footer"></div>  
 </body>
 </html>
