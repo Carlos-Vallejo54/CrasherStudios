@@ -58,7 +58,7 @@ body {
 
 /* Pagination Dots */
 .swiper-pagination-bullet {
-    background: white !important;
+    background: none !important;
 }
 
 /* Left-Aligned Section Below the Banners */
