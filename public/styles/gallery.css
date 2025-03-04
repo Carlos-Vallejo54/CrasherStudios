@@ -9,6 +9,33 @@ body {
     min-height: 100vh;
 }
 
+/* Cover Flow Container */
+.coverflow-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+/* Swiper Container */
+.swiper-container {
+    width: 100%;
+    height: 300px;
+}
+
+/* Swiper Slides */
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.swiper-slide img:hover {
+    transform: scale(1.1);
+}
+
 /* Center the entire gallery container */
 .gallery-container {
     display: flex;

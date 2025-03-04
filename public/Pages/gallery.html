@@ -11,6 +11,25 @@
 <body>
     <div id="header"></div>  
 
+    <!-- Cover Flow Carousel -->
+    <div class="coverflow-container">
+        <div class="swiper-container">
+            <div class="swiper-wrapper" id="coverflow-gallery"></div>
+        </div>
+    </div>
+
+    <!-- Lightbox for Cover Flow & Gallery Images -->
+    <div id="lightbox" class="lightbox hidden">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Preview">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+
+    <!-- Include SwiperJS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script defer src="/scripts/gallery.js"></script>
+
     <div class="gallery-container">
         <div class="gallery" id="gallery"></div>
     </div>
