@@ -19,6 +19,7 @@ body {
 
 /* Projects Grid */
 .projects-container {
+    width: 85%;
     padding: 20px;
     color: white;
 }

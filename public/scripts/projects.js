@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async function () {
     const projectsGrid = document.getElementById("projects-grid");
-    const supportedImageFormats = ["png", "jpg", "jpeg", "webp", "gif"]; 
+    const supportedImageFormats = ["png", "jpg", "jpeg", "webp", "gif", "JPG"]; 
 
     async function loadProjects() {
         try {
