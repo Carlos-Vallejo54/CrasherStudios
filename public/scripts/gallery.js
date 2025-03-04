@@ -33,10 +33,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     function openLightbox(src, filename) {
+        const cleanFilename = filename.replace(/\.[^/.]+$/, ""); 
         lightboxImg.src = src;
-        lightboxCaption.textContent = filename; // Set the filename under the image
+        lightboxCaption.textContent = cleanFilename; 
         lightbox.classList.remove("hidden");
-    }
+    }    
 
     window.closeLightbox = function () {
         lightbox.classList.add("hidden");
