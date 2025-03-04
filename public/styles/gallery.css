@@ -12,11 +12,12 @@ body {
 /* Center the entire gallery container */
 .gallery-container {
     display: flex;
-    justify-content: center;  /* Center horizontally */
-    align-items: center;  /* Center vertically if needed */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     width: 100%;
-    max-width: 1200px;  /* Restrict max width */
-    margin: auto;
+    max-width: 1200px;
+    margin: 50px auto;  /* Adds 50px spacing above and below */
 }
 
 /* Center images and ensure proper spacing */
@@ -72,8 +73,10 @@ body {
     color: white;
     font-family: "Jacquard 12", sans-serif;
     background: rgba(0, 0, 0, 0.5);
-    padding: 15px;
+    padding: 10px;
     border-radius: 5px;
+    margin-top: 15px;  /* Spacing above */
+    margin-bottom: 30px; /* NEW: Adds space below */
 }
 
 .lightbox .close {
