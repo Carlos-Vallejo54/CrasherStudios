@@ -8,12 +8,14 @@ export default function handler(req, res) {
     const featuredPath = path.join(galleryPath, 'Featured');
 
     try {
+        const imageExtensions = /\.(jpe?g|png|gif|webp)$/i; 
+
         const normalImages = fs.readdirSync(normalDisplayPath).filter(file =>
-            /\.(jpe?g|png|gif)$/i.test(file)
+            imageExtensions.test(file)
         );
 
         const featuredImages = fs.readdirSync(featuredPath).filter(file =>
-            /\.(jpe?g|png|gif)$/i.test(file)
+            imageExtensions.test(file)
         );
 
         res.status(200).json({
