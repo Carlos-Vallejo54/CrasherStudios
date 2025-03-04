@@ -5,13 +5,15 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .gallery-container {
     width: 90%;
     max-width: 1200px;
-    margin-top: 20px;
+    margin-top: 80px; /* Same as home.css */
+    flex-grow: 1; /* Expands content to fill space */
 }
 
 .gallery {
