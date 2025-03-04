@@ -23,8 +23,18 @@ h2 {
 }
 p{
     text-align: center;
-    font-family: "Jacquard 12", sans-serif;
+    font-family: "Jacquarda Bastarda 9", serif;
     font-size: 3rem;
+}
+
+a {
+    color: grey;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FFD700; 
+    text-decoration: underline;
 }
 
 /* Cover Flow Container */
