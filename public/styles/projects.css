@@ -8,10 +8,10 @@ body {
 /* Title Styling */
 .projects-title {
     text-align: center;
-    font-size: 3rem;
+    font-size: 5rem;
     margin-top: 20px;
     font-family: "Jacquard 12", sans-serif;
-    background: rgba(255, 255, 255, 0.8);
+    color: white;
     display: inline-block;
     padding: 10px 20px;
     border-radius: 8px;

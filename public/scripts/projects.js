@@ -1,39 +1,100 @@
-async function loadProjects() {
+document.addEventListener("DOMContentLoaded", async function () {
     const projectsGrid = document.getElementById("projects-grid");
 
-    try {
-        const response = await fetch("/api/projects");
-        const data = await response.json();
+    async function loadProjects() {
+        try {
+            console.log("Fetching projects from API...");
+            const response = await fetch("/api/projects");
+            const data = await response.json();
+            console.log("API Response:", data);
 
-        if (!data.projects || data.projects.length === 0) {
-            console.warn("No projects found.");
-            return;
+            if (!data.projects || data.projects.length === 0) {
+                console.warn("No projects found.");
+                return;
+            }
+
+            data.projects.forEach(project => {
+                const encodedProject = encodeURIComponent(project);
+                const projectFolder = `../images/Project/${encodedProject}`;
+                const mainImage = `${projectFolder}/${encodedProject} Main.png`;
+
+                console.log(`Checking image: ${mainImage}`);
+
+                let projectItem = document.createElement("div");
+                projectItem.classList.add("project-item");
+
+                let img = document.createElement("img");
+                img.src = mainImage;
+                img.alt = project;
+                img.onerror = () => {
+                    img.src = "../images/fallback.png";
+                };
+
+                let title = document.createElement("h3");
+                title.textContent = project;
+
+                projectItem.appendChild(img);
+                projectItem.appendChild(title);
+                projectItem.addEventListener("click", () => openProjectPopup(projectFolder, project));
+
+                projectsGrid.appendChild(projectItem);
+            });
+        } catch (error) {
+            console.error("Failed to load projects:", error);
         }
+    }
 
-        data.projects.forEach(async (project) => {
-            const projectFolder = `images/Project/${project}`;
-            const mainImage = `${projectFolder}/${project} Main.png`;
+    async function openProjectPopup(folder, project) {
+        const popup = document.getElementById("project-popup");
+        const popupTitle = document.getElementById("popup-title");
+        const popupYear = document.getElementById("popup-year");
+        const popupNote = document.getElementById("popup-note");
+        const popupImages = document.getElementById("popup-images");
+        const popupDescription = document.getElementById("popup-description");
 
-            const projectItem = document.createElement("div");
-            projectItem.classList.add("project-item");
+        try {
+            const infoResponse = await fetch(`${folder}/projectinfo.txt`);
+            const infoText = await infoResponse.text();
+            const infoLines = infoText.split("\n");
 
-            projectItem.innerHTML = `
-                <img src="${mainImage}" alt="${project}">
-                <h3>${project}</h3>
-            `;
+            popupTitle.innerText = infoLines[0];
+            popupYear.innerText = `Year: ${infoLines[1]}`;
+            popupNote.innerText = infoLines[2];
 
-            projectItem.addEventListener("click", async () => {
-                await loadProjectDetails(projectFolder, project);
+            popupImages.innerHTML = "";
+            let imgIndex = 1;
+            while (true) {
+                const imgPath = `${folder}/${project} ${imgIndex}.png`;
+                const imgExists = await fetch(imgPath, { method: "HEAD" });
+
+                if (!imgExists.ok) break;
+
+                let imgElement = document.createElement("img");
+                imgElement.src = imgPath;
+                popupImages.appendChild(imgElement);
+                imgIndex++;
+            }
+
+            const noteResponse = await fetch(`${folder}/projectnote.txt`);
+            const noteText = await noteResponse.text();
+            const noteLines = noteText.split("\n");
+
+            popupDescription.innerHTML = "";
+            noteLines.forEach(line => {
+                let p = document.createElement("p");
+                p.innerText = line;
+                popupDescription.appendChild(p);
             });
 
-            projectsGrid.appendChild(projectItem);
-        });
-    } catch (error) {
-        console.error("Failed to load projects:", error);
+            popup.style.display = "flex";
+        } catch (error) {
+            console.error("Failed to load project details:", error);
+        }
     }
-}
 
-document.addEventListener("DOMContentLoaded", () => {
-    loadHeaderFooter();
+    document.querySelector(".close-popup").addEventListener("click", () => {
+        document.getElementById("project-popup").style.display = "none";
+    });
+
     loadProjects();
 });
