@@ -1,5 +1,10 @@
+/* General Page Styling */
 body {
     background-color: #0f0f0f;
+    color: #fff;
+    font-family: 'Jacquard 12', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 /* Banner Section */
@@ -11,34 +16,79 @@ body {
 .banner-image {
     width: 100%;
     height: auto;
+    display: block;
 }
 
 .profile-picture {
     position: absolute;
-    bottom: -50px; /* Aligns with bottom middle of the banner */
-    left: 10%; /* Positions it in the first third */
-    width: 150px; /* Adjust size */
-    height: 150px;
+    bottom: -80px;
+    left: 15%; 
+    width: 15vw; 
+    height: 15vw;
     border-radius: 50%;
-    border: 5px solid white; /* Optional border */
 }
 
 /* About Me Content */
 .about-me-content {
-    margin-top: 80px; /* Adjust for spacing below profile pic */
+    margin-top: 25px;
     padding: 20px;
     text-align: center;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-me-content h1 {
+    font-size: 10vw;
+    margin-bottom: 10px;
+}
+
+.about-me-content h2 {
+    font-size: 5vw;
+    margin-top: 20px;
+}
+
+.about-me-content p {
+    font-family: 'Jacquarda Bastarda 9', sans-serif;
+    font-size: 2vw;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.about-me-content a {
+    color: #FFD700;
+}
+
+.about-me-content ul {
+    font-family: 'Jacquarda Bastarda 9', sans-serif;
+    list-style-type: disc;
+    padding: 0;
+}
+
+.about-me-content ul li {
+    font-size: 2VW;
+    margin: 5px 0;
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .profile-picture {
+        bottom: -50px;
+    }
+
+    .about-me-content {
+        margin-top: 45px;
+    }
+}
+
 @media (max-width: 768px) {
     .profile-picture {
         width: 100px;
         height: 100px;
-        bottom: -30px;
+        bottom: -45px;
     }
 
     .about-me-content {
-        margin-top: 60px;
+        margin-top: 40px;
     }
 }
