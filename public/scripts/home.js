@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     function initCoverFlowProjects() {
-        new Swiper(".coverflow-home", {
+        new Swiper("#coverflow-home", {
             effect: "coverflow",
             grabCursor: true,
             centeredSlides: true,
@@ -96,12 +96,11 @@ document.addEventListener("DOMContentLoaded", async function () {
             },
             loop: true,
             navigation: {
-                nextEl: ".coverflow-home .swiper-button-next",
-                prevEl: ".coverflow-home .swiper-button-prev",
+                nextEl: "#coverflow-home .swiper-button-next",
+                prevEl: "#coverflow-home .swiper-button-prev",
             },
         });
     }
-    
 
     async function findExistingImage(basePath) {
         for (let ext of supportedImageFormats) {
