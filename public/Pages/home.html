@@ -80,12 +80,12 @@
     </section>
 
     <div class="coverflow-container">
-        <div class="swiper-container" id="coverflow-home">
-            <div class="swiper-wrapper" id="coverflow-projects"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+        <button class="coverflow-button prev" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="coverflow-slider">
+            <div class="coverflow-wrapper" id="coverflow-projects"></div>
         </div>
-    </div>    
+        <button class="coverflow-button next" onclick="moveSlide(1)">&#10095;</button>
+    </div>     
 
     <div id="loading-spinner" class="loading-spinner"></div>
 
