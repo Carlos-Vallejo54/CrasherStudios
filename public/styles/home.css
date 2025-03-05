@@ -152,7 +152,7 @@ body {
 }
 
 /* Swiper Container */
-#featured-projects-swiper {
+.coverflow-home {
     width: 100%;
     height: auto;
     position: relative;
