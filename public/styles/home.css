@@ -51,8 +51,8 @@ body {
 }
 
 /* Navigation Buttons */
-.swiper-button-next, .swiper-button-prev {
-    color: 1d92be !important;
+.swiper-button-prev-banner, .swiper-button-next-banner {
+    color: #1d92be !important;
 }
 
 /* Pagination Dots */
@@ -181,8 +181,8 @@ body {
     margin: 20px;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    height: 300px;
+    width: 350px;
+    height: 400px;
 }
 
 .project-item img {
@@ -195,6 +195,10 @@ body {
     font-family: "Jacquard 12", sans-serif;
     font-size: 3rem;
     margin-top: 10px;
+}
+
+.swiper-button-prev-projects, .swiper-button-next-projects {
+    color: #1d92be !important;
 }
 
 /* Project Popup */
@@ -252,10 +256,10 @@ body {
 
 .popup-label {
     font-family: "Jacquard 12", sans-serif;
-    font-size: 4rem;
+    font-size: 2.5rem;
     text-decoration: underline;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 10px;
 }
 
@@ -320,7 +324,7 @@ body {
     left: 50%;
     transform: translate(-45%, -50%);
     width: 75px;
-    height: 76px;
+    height: 75px;
     border: 5px solid rgba(255, 255, 255, 0.3);
     border-top: 5px solid midnightblue;
     border-radius: 50%;

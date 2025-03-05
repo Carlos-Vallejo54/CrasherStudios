@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
             clickable: true,
         },
         navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: ".swiper-button-next-banner",
+            prevEl: ".swiper-button-prev-banner",
         },
     });
 });
@@ -96,8 +96,8 @@ document.addEventListener("DOMContentLoaded", async function () {
             },
             loop: true,
             navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+                nextEl: ".swiper-button-next-projects",
+                prevEl: ".swiper-button-prev-projects",
             },
         });
     }
