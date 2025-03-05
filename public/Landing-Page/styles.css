@@ -14,8 +14,8 @@ body {
 
 /* Character Scaling */
 .character {
-    width: 40vw; /* Make it scale dynamically */
-    max-width: 900px; /* Prevent it from getting too big */
+    width: 40vw; 
+    max-width: 900px; 
     height: auto;
     position: absolute;
     animation: riseAndFall 12s infinite alternate;
@@ -23,8 +23,8 @@ body {
 
 /* Sun */
 .sun {
-    width: 10vw; /* Adjust size dynamically */
-    max-width: 180px; /* Limit max size */
+    width: 10vw; 
+    max-width: 180px; 
     height: auto;
     position: absolute;
     top: -50px;
@@ -37,12 +37,10 @@ body {
 .menu {
     position: absolute;
     top: 22%;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
-    gap: 2vw; /* Adjust spacing dynamically */
+    gap: 4vw; 
     font-family: 'Jacquard 12', cursive;
-    font-size: 1.5vw; /* Adjust font size */
+    font-size: 3vw; 
     color: #ffffff;
     padding: 10px 2vw;
     border: 3px solid #0a0a2a;
@@ -59,23 +57,24 @@ body {
 
 .menu a:hover {
     color: #FFD700;
+    text-decoration: underline;
 }
 
 /* Praise the Sun Text */
 .praise-text {
     font-family: 'Jacquard 12', cursive;
-    font-size: 6vw; /* Dynamic scaling */
+    font-size: 10vw;
     color: #0a0a2a;
     position: absolute;
-    top: 35%;
+    top: 28%;
     text-align: center;
     animation: textFade 12s infinite alternate;
 }
 
 /* Character Animation */
 .character {
-    width: 40vw; /* Responsive scaling */
-    max-width: 900px; /* Prevent it from getting too big */
+    width: 40vw; 
+    max-width: 900px; 
     height: auto;
     position: absolute;
     bottom: 0;
@@ -127,7 +126,7 @@ body {
     }
     
     .praise-text {
-        font-size: 10vw;
+        font-size: 13vw;
         top: 37%;
     }
     
@@ -144,32 +143,36 @@ body {
     .menu {
         font-size: 3vw;
         gap: 5vw;
+        margin-top: 10%;
+        align-items: center;
+        justify-items: center;
     }
     
     .praise-text {
         font-size: 15vw;
-        top: 40%;
+        top: 37%;
     }
     
     .character {
-        width: 75vw;
+        width: 100vw;
     }
     
     .sun {
-        width: 15vw;
+        width: 35vw;
     }
 }
 
 @media (max-width: 768px) {
     .menu {
         flex-direction: column;
+        align-items: center;
         top: 15%;
         font-size: 2.5vw;
         gap: 10px;
     }
 
     .praise-text {
-        font-size: 9vw;
+        font-size: 12vw;
         top: 42%;
     }
 
@@ -186,7 +189,7 @@ body {
     .menu {
         flex-direction: column;
         top: 20%;
-        font-size: 4vw;
+        font-size: 6vw;
         padding: 5px 1vw;
         gap: 8px;
     }
@@ -197,10 +200,10 @@ body {
     }
 
     .character {
-        width: 65vw;
+        width: 100vw;
     }
 
     .sun {
-        width: 18vw;
+        width: 25vw;
     }
 }
