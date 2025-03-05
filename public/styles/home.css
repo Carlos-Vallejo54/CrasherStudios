@@ -1,7 +1,6 @@
 /* General Page Styles */
 body {
     background-color: #0f0f0f;
-    color: white;
     text-align: center;
 }
 
@@ -11,9 +10,9 @@ body {
     font-size: 3rem;
 }
 
-/* Apply Jacquard 12 font */
 .welcome h1, .quote {
     font-family: "Jacquard 12", sans-serif;
+    color: white;
 }
 
 .welcome p {
@@ -22,7 +21,7 @@ body {
     color: #1d92be;
 }
 
-/* Swiper Carousel */
+/* Swiper Banner */
 .swiper-container {
     width: 100%;
     height: auto;
@@ -45,7 +44,6 @@ body {
     width: 100%;
     text-align: center;
     font-size: 3rem;
-    color: white;
     font-family: "Jacquard 12", sans-serif;
     background: rgba(0, 0, 0, 0.5);
     padding: 15px;
@@ -71,7 +69,7 @@ body {
     padding: 10px 0;
 }
 
-.custom-section h2, .featured-projects h2, p {
+.custom-section h2, .featured-projects h2 {
     font-size: 4rem;
     font-family: "Jacquard 12", sans-serif;
     color: white;
@@ -155,9 +153,10 @@ body {
     width: 100%;
     max-width: 90%;
     margin: 40px auto;
+    margin-bottom: 10%;
 }
 
-/* Swiper Container */
+/* Swiper Featured Projects */
 #featured-projects-swiper {
     width: 100%;
     height: auto;
@@ -165,7 +164,7 @@ body {
 }
 
 /* Swiper Slides */
-.swiper-slide {
+.swiper-slide2 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -194,42 +193,7 @@ body {
 
 .project-item h3 {
     font-family: "Jacquard 12", sans-serif;
-    font-size: 2rem;
-    margin-top: 10px;
-}
-
-/* Loading Spinner */
-.loading-spinner {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-45%, -50%);
-    width: 75px;
-    height: 76px;
-    border: 5px solid rgba(255, 255, 255, 0.3);
-    border-top: 5px solid midnightblue;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    z-index: 1100;
-    padding: 30px;
-    background-color: lightblue;
-}
-
-@keyframes spin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-/* Image Caption Under Carousel */
-.carousel-caption {
-    text-align: center;
-    font-size: 1rem;
-    color: white;
-    font-family: "Jacquard 12", sans-serif;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 5px;
-    border-radius: 5px;
+    font-size: 3rem;
     margin-top: 10px;
 }
 
@@ -346,4 +310,74 @@ body {
     padding: 10px;
     border-radius: 50%;
     z-index: 1100;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-45%, -50%);
+    width: 75px;
+    height: 76px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid midnightblue;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 1100;
+    padding: 30px;
+    background-color: lightblue;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .project-item {
+        width: 90%;
+    }
+
+    .popup-content {
+        width: 90%;
+        max-height: 90%;
+        padding: 20px;
+    }
+
+    .popup-title, .popup-year, .popup-note {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    
+    .popup-label {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    .popup-grid {
+        width: 100%;
+    }
+
+    .popup-grid img {
+        max-width: 95%; 
+    }
+
+    #popup-description {
+        font-size: 1.6rem; 
+    }
+
+    .close-popup {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        z-index: 1100;
+    }
+    
 }
