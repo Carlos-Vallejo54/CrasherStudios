@@ -34,7 +34,6 @@ body {
 /* Banner (full image size) */
 .banner {
     width: 100%;
-    height: auto;
     background-size: cover !important; /* Maintain aspect ratio */
     background-position: center;
     background-repeat: no-repeat !important;
