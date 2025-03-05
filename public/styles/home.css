@@ -31,19 +31,21 @@ body {
     overflow: hidden;
 }
 
-/* Banner (full image size) */
+/* Responsive Banner Styling */
 .banner {
     width: 100%;
-    background-size: cover !important; /* Maintain aspect ratio */
+    background-size: cover !important;
     background-position: center;
     background-repeat: no-repeat !important;
 }
 
-/* Quote positioned below each banner */
+/* Adjust Quotes */
 .quote {
+    position: absolute;
+    bottom: 5%;
     width: 100%;
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.5vw;
     color: white;
     font-family: "Jacquard 12", sans-serif;
     background: rgba(0, 0, 0, 0.5);
