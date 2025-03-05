@@ -140,7 +140,7 @@ body {
 }
 
 .popup-grid img:hover {
-    transform: scale(1.15);
+    transform: scale(1.2);
 }
 
 .popup-content::-webkit-scrollbar {
@@ -180,10 +180,10 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-45%, -50%);
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 76px;
     border: 5px solid rgba(255, 255, 255, 0.3);
-    border-top: 5px solid blue;
+    border-top: 5px solid midnightblue;
     border-radius: 50%;
     animation: spin 1s linear infinite;
     z-index: 1100;
