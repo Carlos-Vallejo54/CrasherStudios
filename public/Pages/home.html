@@ -82,18 +82,19 @@
         </p>
     </section>
 
-    <div class="coverflow-container">
-        <div class="swiper-container" id="featured-projects-carousel">
+    <div class="featured-projects-carousel-container">
+        <div class="swiper-container" id="featured-projects-swiper">
             <div class="swiper-wrapper" id="featured-projects-wrapper"></div>
-
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         </div>
     </div>
 
-    <div id="project-popup" class="popup">
+    <div id="loading-spinner" class="loading-spinner"></div>
+
+    <div id="project-popup" class="popup hidden">
         <div class="popup-content">
-            <span class="close-popup">&times;</span>
+            <span class="close-popup" onclick="closeProjectPopup()">&times;</span>
             <h2 id="popup-title" class="popup-title"></h2>
             <p id="popup-year" class="popup-year"></p>
             <p id="popup-note" class="popup-note"></p>

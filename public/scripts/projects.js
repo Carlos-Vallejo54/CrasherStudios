@@ -4,10 +4,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     async function loadProjects() {
         try {
-            console.log("Fetching projects from API...");
             const response = await fetch("/api/projects");
             const data = await response.json();
-            console.log("API Response:", data);
 
             if (!data.projects || data.projects.length === 0) {
                 console.warn("No projects found.");

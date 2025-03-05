@@ -1,7 +1,5 @@
 /* General Page Styles */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
     background-color: #0f0f0f;
     color: white;
     text-align: center;
@@ -152,21 +150,20 @@ body {
     text-decoration: underline;
 }
 
-/* Featured Projects Cover Flow Carousel */
-.coverflow-container {
+/* Featured Projects Carousel */
+.featured-projects-carousel-container {
     width: 100%;
     max-width: 90%;
     margin: 40px auto;
 }
 
-/* Swiper Carousel */
-#featured-projects-carousel {
+/* Swiper */
+#featured-projects-swiper {
     width: 100%;
     height: 320px;
     position: relative;
 }
 
-/* Swiper Slides */
 .swiper-slide {
     display: flex;
     flex-direction: column;
@@ -185,9 +182,27 @@ body {
     transition: transform 0.2s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-/* Hide extra slides */
-.swiper-slide:not(.swiper-slide-active):not(.swiper-slide-prev):not(.swiper-slide-next) {
-    opacity: 0;  
+/* Loading Spinner */
+.loading-spinner {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-45%, -50%);
+    width: 75px;
+    height: 76px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid midnightblue;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 1100;
+    padding: 30px;
+    background-color: lightblue;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 /* Image Caption Under Carousel */
@@ -200,4 +215,70 @@ body {
     padding: 5px;
     border-radius: 5px;
     margin-top: 10px;
+}
+
+/* Project Popup */
+.popup {
+    display: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.popup-content {
+    background: grey;
+    padding: 40px;
+    width: 70%;
+    max-height: 80%;
+    overflow-y: auto;
+    border-radius: 10px;
+    position: relative;
+}
+
+.popup-title, .popup-year, .popup-note {
+    font-family: "Jacquard 12", sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.popup-label {
+    font-family: "Jacquard 12", sans-serif;
+    font-size: 2rem;
+    text-decoration: underline;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.popup-grid img {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.2s ease-in-out;
+}
+
+.popup-grid img:hover {
+    transform: scale(1.2);
+}
+
+.close-popup {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 1100;
 }

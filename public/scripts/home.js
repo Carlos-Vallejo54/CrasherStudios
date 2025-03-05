@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Initialize Banner Swiper
     new Swiper(".swiper-container", {
-        loop: true, // Infinite loop
+        loop: true,
         autoplay: {
-            delay: 5000, // Change slide every 5 seconds
+            delay: 5000,
             disableOnInteraction: false,
         },
         pagination: {
@@ -29,34 +30,12 @@ function closeLightbox() {
     document.getElementById("banner-lightbox").classList.add("hidden");
 }
 
+// Load Featured Projects
 document.addEventListener("DOMContentLoaded", async function () {
-    // Load Featured Projects Cover Flow
-    await loadFeaturedProjects();
-
-    function initCoverFlow() {
-        new Swiper('#featured-projects-carousel', {
-            effect: 'coverflow',
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: 3,  
-            coverflowEffect: {
-                rotate: 50,
-                stretch: 0,
-                depth: 300, 
-                modifier: 1,
-                slideShadows: true,
-            },
-            loop: true, 
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-    }    
+    const featuredProjectsWrapper = document.getElementById("featured-projects-wrapper");
+    const supportedImageFormats = ["png", "jpg", "jpeg", "webp", "gif", "JPG"];
 
     async function loadFeaturedProjects() {
-        const projectWrapper = document.getElementById("featured-projects-wrapper");
-
         try {
             const response = await fetch("/api/projects");
             const data = await response.json();
@@ -66,10 +45,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                 return;
             }
 
-            // Randomly select 3 projects
-            const shuffledProjects = data.projects.sort(() => 0.5 - Math.random()).slice(0, 3);
+            const selectedProjects = data.projects.sort(() => 0.5 - Math.random()).slice(0, 3);
 
-            shuffledProjects.forEach(async (project) => {
+            selectedProjects.forEach(async (project) => {
                 const encodedProject = encodeURIComponent(project);
                 const projectFolder = `../images/Project/${encodedProject}`;
                 const mainImage = await findExistingImage(`${projectFolder}/${encodedProject} Main`);
@@ -80,27 +58,47 @@ document.addEventListener("DOMContentLoaded", async function () {
                 let img = document.createElement("img");
                 img.src = mainImage;
                 img.alt = project;
+                img.onerror = () => {
+                    img.src = "../images/fallback.png";
+                };
                 img.onclick = () => openProjectPopup(projectFolder, project);
 
-                let caption = document.createElement("div");
-                caption.classList.add("carousel-caption");
-                caption.textContent = project;
+                let title = document.createElement("h3");
+                title.textContent = project;
 
                 slide.appendChild(img);
-                slide.appendChild(caption);
-                projectWrapper.appendChild(slide);
+                slide.appendChild(title);
+                featuredProjectsWrapper.appendChild(slide);
             });
 
-            // Initialize Cover Flow
-            initCoverFlow();
-
+            initFeaturedProjectsCarousel();
         } catch (error) {
             console.error("Failed to load featured projects:", error);
         }
     }
 
+    function initFeaturedProjectsCarousel() {
+        new Swiper("#featured-projects-swiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 3,
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 300,
+                modifier: 1,
+                slideShadows: true,
+            },
+            loop: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    }
+
     async function findExistingImage(basePath) {
-        const supportedImageFormats = ["png", "jpg", "jpeg", "webp", "gif", "JPG"];
         for (let ext of supportedImageFormats) {
             let imgPath = `${basePath}.${ext}`;
             try {
@@ -120,6 +118,9 @@ document.addEventListener("DOMContentLoaded", async function () {
         const popupNote = document.getElementById("popup-note");
         const popupImages = document.getElementById("popup-images");
         const popupDescription = document.getElementById("popup-description");
+        const loadingSpinner = document.getElementById("loading-spinner");
+
+        loadingSpinner.style.display = "block";
 
         try {
             const infoResponse = await fetch(`${folder}/projectinfo.txt`);
@@ -158,10 +159,14 @@ document.addEventListener("DOMContentLoaded", async function () {
             popup.style.display = "flex";
         } catch (error) {
             console.error("Failed to load project details:", error);
+        } finally {
+            loadingSpinner.style.display = "none";
         }
     }
 
     document.querySelector(".close-popup").addEventListener("click", () => {
         document.getElementById("project-popup").style.display = "none";
     });
+
+    loadFeaturedProjects();
 });
