@@ -20,8 +20,7 @@ body {
 /* Projects Grid */
 .projects-container {
     width: 85%;
-    max-width: 1200px; 
-    margin: 15% auto;  
+    margin: 0 auto;  
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -80,7 +79,7 @@ body {
     width: 70%;
     max-height: 80%;
     align-items: center;
-    justify-content: center;
+    justify-self: center;
     overflow-y: auto;
     border-radius: 10px;
     position: relative; 
@@ -163,7 +162,7 @@ body {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-45%, -50%);
     width: 50px;
     height: 50px;
     border: 5px solid rgba(255, 255, 255, 0.3);
@@ -171,7 +170,7 @@ body {
     border-radius: 50%;
     animation: spin 1s linear infinite;
     z-index: 1100;
-    padding: 20px;
+    padding: 30px;
     background-color: black;
 }
 
