@@ -1,18 +1,19 @@
 /* General Page Styles */
 body {
     background-color: #0f0f0f;
+    color: white;
     text-align: center;
 }
 
 /* Welcome Section */
 .welcome {
-    padding: 50px 20px 10px;
+    padding: 50px 20px;
     font-size: 3rem;
 }
 
+/* Apply Jacquard 12 font */
 .welcome h1, .quote {
     font-family: "Jacquard 12", sans-serif;
-    color: white;
 }
 
 .welcome p {
@@ -21,8 +22,8 @@ body {
     color: #1d92be;
 }
 
-/* Banner Swiper */
-.banner-swiper {
+/* Swiper Carousel */
+.swiper-container {
     width: 100%;
     height: auto;
     overflow: hidden;
@@ -32,6 +33,8 @@ body {
 .banner {
     width: 100%;
     height: auto; 
+    max-height: 600px; 
+    min-height: 250px; 
     background-size: cover !important;
     background-position: center;
     background-repeat: no-repeat !important;
@@ -42,14 +45,15 @@ body {
     width: 100%;
     text-align: center;
     font-size: 3rem;
+    color: white;
     font-family: "Jacquard 12", sans-serif;
     background: rgba(0, 0, 0, 0.5);
     padding: 15px;
     border-radius: 5px;
 }
 
-/* Banner Buttons */
-.swiper-button-prev.banner-prev, .swiper-button-next.banner-next {
+/* Navigation Buttons */
+.swiper-button-next, .swiper-button-prev {
     color: #1d92be !important;
 }
 
@@ -144,12 +148,12 @@ body {
 /* Cover Flow Container */
 .coverflow-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 90%;
     margin: 40px auto;
     margin-bottom: 10%;
 }
 
-/* Swiper Featured Projects */
+/* Swiper Container */
 #featured-projects-swiper {
     width: 100%;
     height: auto;
@@ -175,7 +179,7 @@ body {
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 350px;
-    height: 400px;
+    height: 200px;
 }
 
 .project-item img {
@@ -187,11 +191,30 @@ body {
 .project-item h3 {
     font-family: "Jacquard 12", sans-serif;
     font-size: 2rem;
-    margin: 10px;
+    margin-top: 30px;
 }
 
-.swiper-button-prev.projects-prev, .swiper-button-next.projects-next {
-    color: #1d92be !important;
+/* Loading Spinner */
+.loading-spinner {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-45%, -50%);
+    width: 75px;
+    height: 76px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid midnightblue;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 1100;
+    padding: 30px;
+    background-color: lightblue;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 /* Project Popup */
@@ -307,27 +330,4 @@ body {
     padding: 10px;
     border-radius: 50%;
     z-index: 1100;
-}
-
-/* Loading Spinner */
-.loading-spinner {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-45%, -50%);
-    width: 75px;
-    height: 75px;
-    border: 5px solid rgba(255, 255, 255, 0.3);
-    border-top: 5px solid midnightblue;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    z-index: 1100;
-    padding: 30px;
-    background-color: lightblue;
-}
-
-@keyframes spin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
