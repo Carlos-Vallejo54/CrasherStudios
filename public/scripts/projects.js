@@ -65,6 +65,9 @@ document.addEventListener("DOMContentLoaded", async function () {
         const popupNote = document.getElementById("popup-note");
         const popupImages = document.getElementById("popup-images");
         const popupDescription = document.getElementById("popup-description");
+        const loadingSpinner = document.getElementById("loading-spinner");
+
+        loadingSpinner.style.display = "block";
 
         try {
             const infoResponse = await fetch(`${folder}/projectinfo.txt`);
@@ -103,6 +106,9 @@ document.addEventListener("DOMContentLoaded", async function () {
             popup.style.display = "flex";
         } catch (error) {
             console.error("Failed to load project details:", error);
+        } finally {
+
+            loadingSpinner.style.display = "none";
         }
     }
 
