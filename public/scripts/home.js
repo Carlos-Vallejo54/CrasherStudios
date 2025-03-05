@@ -96,8 +96,8 @@ document.addEventListener("DOMContentLoaded", async function () {
             },
             loop: true,
             navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+                nextEl: ".swiper-button-next2",
+                prevEl: ".swiper-button-prev2",
             },
         });
     }
