@@ -31,9 +31,7 @@ body {
 /* Responsive Banner Styling */
 .banner {
     width: 100%;
-    height: 40vw; 
-    max-height: 600px; 
-    min-height: 250px; 
+    height: auto; 
     background-size: cover !important;
     background-position: center;
     background-repeat: no-repeat !important;
@@ -146,7 +144,7 @@ body {
 /* Cover Flow Container */
 .coverflow-container {
     width: 100%;
-    max-width: 90%;
+    max-width: 1200px;
     margin: 40px auto;
     margin-bottom: 10%;
 }
