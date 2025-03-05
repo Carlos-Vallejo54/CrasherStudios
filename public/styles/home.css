@@ -21,8 +21,8 @@ body {
     color: #1d92be;
 }
 
-/* Swiper Banner */
-.swiper-container {
+/* Banner Swiper */
+.banner-swiper {
     width: 100%;
     height: auto;
     overflow: hidden;
@@ -50,8 +50,8 @@ body {
     border-radius: 5px;
 }
 
-/* Navigation Buttons */
-.swiper-button-prev-banner, .swiper-button-next-banner {
+/* Banner Buttons */
+.swiper-button-prev.banner-prev, .swiper-button-next.banner-next {
     color: #1d92be !important;
 }
 
@@ -152,9 +152,8 @@ body {
 }
 
 /* Swiper Featured Projects */
-#featured-projects-swiper {
+.projects-swiper {
     width: 100%;
-    height: auto;
     position: relative;
 }
 
@@ -192,7 +191,7 @@ body {
     margin-top: 10px;
 }
 
-.swiper-button-prev-projects, .swiper-button-next-projects {
+.swiper-button-prev.projects-prev, .swiper-button-next.projects-next {
     color: #1d92be !important;
 }
 
