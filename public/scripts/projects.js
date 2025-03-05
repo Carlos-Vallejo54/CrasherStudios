@@ -65,10 +65,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         const popupNote = document.getElementById("popup-note");
         const popupImages = document.getElementById("popup-images");
         const popupDescription = document.getElementById("popup-description");
-        const loadingWrapper = document.getElementById("loading-wrapper");
         const loadingSpinner = document.getElementById("loading-spinner");
 
-        loadingWrapper.style.display = "flex";
         loadingSpinner.style.display = "block";
 
         try {
@@ -110,7 +108,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             console.error("Failed to load project details:", error);
         } finally {
 
-            loadingWrapper.style.display = "none";
             loadingSpinner.style.display = "none";
         }
     }
