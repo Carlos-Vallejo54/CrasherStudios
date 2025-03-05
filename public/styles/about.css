@@ -1,0 +1,44 @@
+body {
+    background-color: #0f0f0f;
+}
+
+/* Banner Section */
+.banner-section {
+    position: relative;
+    text-align: center;
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+}
+
+.profile-picture {
+    position: absolute;
+    bottom: -50px; /* Aligns with bottom middle of the banner */
+    left: 10%; /* Positions it in the first third */
+    width: 150px; /* Adjust size */
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid white; /* Optional border */
+}
+
+/* About Me Content */
+.about-me-content {
+    margin-top: 80px; /* Adjust for spacing below profile pic */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+        bottom: -30px;
+    }
+
+    .about-me-content {
+        margin-top: 60px;
+    }
+}
