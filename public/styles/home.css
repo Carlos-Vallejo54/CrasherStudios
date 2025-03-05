@@ -9,7 +9,7 @@ body {
 
 /* Welcome Section */
 .welcome {
-    padding: 50px 20px;
+    padding: 50px 20px 10px;
     font-size: 3rem;
 }
 
@@ -44,11 +44,9 @@ body {
 
 /* Adjust Quotes */
 .quote {
-    position: absolute;
-    bottom: 5%;
     width: 100%;
     text-align: center;
-    font-size: 2.5vw;
+    font-size: 3rem;
     color: white;
     font-family: "Jacquard 12", sans-serif;
     background: rgba(0, 0, 0, 0.5);
@@ -72,7 +70,6 @@ body {
     max-width: 1400px;
     margin: 40px auto;
     text-align: center;
-    margin-top: 50px;
     padding: 10px 0;
 }
 
@@ -125,7 +122,7 @@ body {
 .featured-projects {
     width: 90%;
     max-width: 1400px;
-    margin: 30px auto;
+    margin: 0px auto;
     color: white;
 }
 
@@ -142,6 +139,7 @@ body {
     color: #1d92be;
     text-align: left;
     font-family: "Jacquarda Bastarda 9", serif;
+    margin-bottom: 5%;
 }
 
 .featured-projects a {
