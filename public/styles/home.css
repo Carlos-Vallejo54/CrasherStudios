@@ -237,21 +237,30 @@ body {
     padding: 40px;
     width: 70%;
     max-height: 80%;
+    align-items: center;
+    justify-self: center;
     overflow-y: auto;
     border-radius: 10px;
-    position: relative;
+    position: relative; 
 }
 
-.popup-title, .popup-year, .popup-note {
+.popup-title {
     font-family: "Jacquard 12", sans-serif;
-    font-size: 2.5rem;
+    font-size: 4rem;
     text-align: center;
     margin-bottom: 10px;
 }
 
+.popup-year, .popup-note {
+    font-family: "Jacquarda Bastarda 9", sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
 .popup-label {
     font-family: "Jacquard 12", sans-serif;
-    font-size: 2rem;
+    font-size: 4rem;
     text-decoration: underline;
     text-align: center;
     margin-top: 30px;
