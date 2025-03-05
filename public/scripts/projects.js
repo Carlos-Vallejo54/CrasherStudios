@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", async function () {
+    const popup = document.getElementById("project-popup");
+    if (popup) popup.style.display = "none"; 
     const projectsGrid = document.getElementById("projects-grid");
     const supportedImageFormats = ["png", "jpg", "jpeg", "webp", "gif", "JPG"]; 
 

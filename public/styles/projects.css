@@ -62,6 +62,7 @@ body {
 /* Popup Styling */
 .popup {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     position: fixed;
@@ -110,12 +111,12 @@ body {
 }
 
 .popup-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     justify-content: center; 
     align-items: center;
+    width: 90%;
 }
 
 .popup-grid img {
