@@ -160,7 +160,7 @@ body {
 /* Swiper Container */
 #featured-projects-swiper {
     width: 100%;
-    height: 320px;
+    height: auto;
     position: relative;
 }
 
@@ -176,12 +176,14 @@ body {
 /* Swiper Project Items */
 .project-item {
     background-color: grey;
-    padding: 25px;
+    padding: 10px;
     text-align: center;
     border-radius: 10px;
     margin: 20px;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    height: 300px;
 }
 
 .project-item img {
@@ -258,6 +260,7 @@ body {
     position: relative; 
 }
 
+/* Popup Fonts */
 .popup-title {
     font-family: "Jacquard 12", sans-serif;
     font-size: 4rem;
@@ -272,6 +275,17 @@ body {
     margin-bottom: 30px;
 }
 
+#popup-description {
+    font-family: "Jacquarda Bastarda 9", sans-serif;
+    font-size: 2rem;
+    padding: 10px;
+    line-height: 1.5;
+}
+
+#popup-description p {
+    margin-top: 20px; 
+}
+
 .popup-label {
     font-family: "Jacquard 12", sans-serif;
     font-size: 4rem;
@@ -279,6 +293,16 @@ body {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 10px;
+}
+
+.popup-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr)); 
+    gap: 20px;
+    justify-content: center; 
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
 }
 
 .popup-grid img {
@@ -292,6 +316,24 @@ body {
 
 .popup-grid img:hover {
     transform: scale(1.2);
+}
+
+.popup-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.popup-content::-webkit-scrollbar-track {
+    background: #222; 
+    border-radius: 10px;
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+    background: #fff; 
+    border-radius: 10px;
+}
+
+.popup-content::-webkit-scrollbar-thumb:hover {
+    background: #bbb;
 }
 
 .close-popup {

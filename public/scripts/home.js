@@ -145,6 +145,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
                 let imgElement = document.createElement("img");
                 imgElement.src = imagePath;
+                imgElement.classList.add("popup-img");
                 popupImages.appendChild(imgElement);
                 imgIndex++;
             }
