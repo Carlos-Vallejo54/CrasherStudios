@@ -22,7 +22,7 @@ body {
 .profile-picture {
     position: absolute;
     bottom: -80px;
-    left: 15%; 
+    left: 10%; 
     width: 15vw; 
     height: 15vw;
     border-radius: 50%;
@@ -34,8 +34,9 @@ body {
     padding: 20px;
     text-align: center;
     max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 50px;
 }
 
 .about-me-content h1 {
@@ -50,17 +51,22 @@ body {
 
 .about-me-content p {
     font-family: 'Jacquarda Bastarda 9', sans-serif;
-    font-size: 2vw;
+    font-size: 1.6vw;
     line-height: 1.6;
     margin: 10px 0;
+    color: #1d92be;
 }
 
+.about-me-content strong {
+    color: #1d92be;
+}
 .about-me-content a {
-    color: #FFD700;
+    color: #1d92be;
 }
 
 .about-me-content ul {
     font-family: 'Jacquarda Bastarda 9', sans-serif;
+    color: #1d92be;
     list-style-type: disc;
     padding: 0;
 }
@@ -68,6 +74,29 @@ body {
 .about-me-content ul li {
     font-size: 2VW;
     margin: 5px 0;
+}
+
+/* Two-column layout for Location/Contact and Education/Skills */
+.info-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.info-box {
+    width: 40%;
+    text-align: left;
+}
+
+.info-box h2 {
+    text-align: center;
+}
+
+/* Center Work Section */
+.work-container {
+    text-align: center;
+    margin: 30px 0;
 }
 
 /* Responsive Design */
@@ -78,6 +107,27 @@ body {
 
     .about-me-content {
         margin-top: 45px;
+    }
+
+    .info-box {
+        width: 100%;
+        text-align: center;
+    }
+
+    .about-me-content h1 {
+        font-size: 12vw;
+    }
+
+    .about-me-content h2 {
+        font-size: 8vw;
+    }
+
+    .about-me-content p {
+        font-size: 3vw;
+    }
+
+    .about-me-content ul li {
+        font-size: 3vw;
     }
 }
 
@@ -90,5 +140,28 @@ body {
 
     .about-me-content {
         margin-top: 40px;
+        margin-bottom: 15px;
+    }
+
+    .info-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-box {
+        width: 100%;
+        text-align: center;
+    }
+
+    .about-me-content h2 {
+        font-size: 8vw;
+    }
+
+    .about-me-content p {
+        font-size: 3.5vw;
+    }
+
+    .about-me-content ul li {
+        font-size: 3.5vw;
     }
 }
