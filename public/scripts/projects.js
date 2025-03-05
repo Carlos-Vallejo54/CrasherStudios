@@ -65,8 +65,10 @@ document.addEventListener("DOMContentLoaded", async function () {
         const popupNote = document.getElementById("popup-note");
         const popupImages = document.getElementById("popup-images");
         const popupDescription = document.getElementById("popup-description");
+        const loadingWrapper = document.getElementById("loading-wrapper");
         const loadingSpinner = document.getElementById("loading-spinner");
 
+        loadingWrapper.style.display = "block";
         loadingSpinner.style.display = "block";
 
         try {
