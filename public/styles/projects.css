@@ -23,7 +23,6 @@ body {
     max-width: 1200px; 
     margin: 0 auto;  
     padding: 20px;
-    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,15 +61,16 @@ body {
 
 /* Popup Styling */
 .popup {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    justify-content: center;
-    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
 }
 
 .popup-content {
@@ -79,15 +79,8 @@ body {
     width: 70%;
     max-height: 80%;
     overflow-y: auto;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; 
+    position: relative; 
 }
 
 /* Popup Fonts */
@@ -121,6 +114,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     justify-content: center; 
+    align-items: center;
 }
 
 .popup-content::-webkit-scrollbar {
@@ -145,12 +139,12 @@ body {
     position: fixed;
     top: 15px;
     right: 15px;
-    font-size: 30px;
+    font-size: 35px;
     color: white;
     cursor: pointer;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 5px 10px;
+    padding: 10px 15px;
     border-radius: 50%;
+    z-index: 1100;
 }
 
 .popup-grid img {
