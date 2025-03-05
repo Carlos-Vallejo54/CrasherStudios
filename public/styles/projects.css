@@ -53,10 +53,6 @@ body {
     border-radius: 5px;
 }
 
-.project-item img:hover {
-    transform: scale(1.15);
-}
-
 .project-item h3 {
     font-family: "Jacquard 12", sans-serif;
     font-size: 3rem;
@@ -140,6 +136,11 @@ body {
     border-radius: 10px;
     display: block;
     margin: 0 auto;
+    transition: transform 0.2s ease-in-out;
+}
+
+.project-item img:hover {
+    transform: scale(1.15);
 }
 
 .popup-content::-webkit-scrollbar {
@@ -161,13 +162,13 @@ body {
 }
 
 .close-popup {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    font-size: 35px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 40px;
     color: white;
     cursor: pointer;
-    padding: 10px 15px;
+    padding: 10px;
     border-radius: 50%;
     z-index: 1100;
 }
@@ -194,3 +195,50 @@ body {
     0% { transform: translate(-50%, -50%) rotate(0deg); }
     100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
+
+@media (max-width: 768px) {
+    .projects-container {
+        width: 95%;
+    }
+
+    #projects-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .project-item {
+        width: 90%;
+    }
+
+    .popup-content {
+        width: 90%;
+        max-height: 90%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .popup-title, .popup-year, .popup-note {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    
+    .popup-label {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .popup-grid {
+        width: 100%;
+    }
+
+    .popup-grid img {
+        max-width: 95%; 
+    }
+
+    #popup-description {
+        font-size: 1.6rem; 
+    }
+}
+
