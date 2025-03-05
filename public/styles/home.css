@@ -55,11 +55,6 @@ body {
     color: #1d92be !important;
 }
 
-/* Pagination Dots */
-.swiper-pagination-bullet {
-    background: none !important;
-}
-
 /* Left-Aligned Section Below the Banners */
 .custom-section, .custom-section p {
     width: 100%;
