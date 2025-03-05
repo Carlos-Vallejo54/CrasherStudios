@@ -150,8 +150,9 @@ body {
 }
 
 /* Swiper Featured Projects */
-.projects-swiper {
+#featured-projects-swiper {
     width: 100%;
+    height: auto;
     position: relative;
 }
 
@@ -185,8 +186,8 @@ body {
 
 .project-item h3 {
     font-family: "Jacquard 12", sans-serif;
-    font-size: 3rem;
-    margin-top: 10px;
+    font-size: 2rem;
+    margin: 10px;
 }
 
 .swiper-button-prev.projects-prev, .swiper-button-next.projects-next {
@@ -248,10 +249,10 @@ body {
 
 .popup-label {
     font-family: "Jacquard 12", sans-serif;
-    font-size: 2.5rem;
+    font-size: 4rem;
     text-decoration: underline;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 10px;
 }
 

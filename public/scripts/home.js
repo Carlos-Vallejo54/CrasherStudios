@@ -1,14 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Initialize Banner Swiper
-    new Swiper(".banner-swiper", {
+    new Swiper(".swiper-container", {
         loop: true,
         autoplay: {
             delay: 5000,
             disableOnInteraction: false,
         },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
         navigation: {
-            nextEl: ".banner-next",
-            prevEl: ".banner-prev",
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
         },
     });
 });
@@ -82,7 +86,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             effect: "coverflow",
             grabCursor: true,
             centeredSlides: true,
-            slidesPerView: auto,
+            slidesPerView: 3,
             coverflowEffect: {
                 rotate: 50,
                 stretch: 0,
@@ -92,8 +96,8 @@ document.addEventListener("DOMContentLoaded", async function () {
             },
             loop: true,
             navigation: {
-                nextEl: ".projects-next",
-                prevEl: ".projects-prev",
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
             },
         });
     }
