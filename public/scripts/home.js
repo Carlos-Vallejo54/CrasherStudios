@@ -32,7 +32,7 @@ function closeLightbox() {
 
 // Load Featured Projects
 document.addEventListener("DOMContentLoaded", async function () {
-    const featuredProjectsWrapper = document.getElementById("featured-projects-wrapper");
+    const coverflowProjects = document.getElementById("coverflow-projects");
     const supportedImageFormats = ["png", "jpg", "jpeg", "webp", "gif", "JPG"];
 
     async function loadFeaturedProjects() {
@@ -55,34 +55,38 @@ document.addEventListener("DOMContentLoaded", async function () {
                 let slide = document.createElement("div");
                 slide.classList.add("swiper-slide");
 
+                let projectItem = document.createElement("div");
+                projectItem.classList.add("project-item");
+
                 let img = document.createElement("img");
                 img.src = mainImage;
                 img.alt = project;
                 img.onerror = () => {
                     img.src = "../images/fallback.png";
                 };
-                img.onclick = () => openProjectPopup(projectFolder, project);
+                projectItem.onclick = () => openProjectPopup(projectFolder, project);
 
                 let title = document.createElement("h3");
                 title.textContent = project;
 
-                slide.appendChild(img);
-                slide.appendChild(title);
-                featuredProjectsWrapper.appendChild(slide);
+                projectItem.appendChild(img);
+                projectItem.appendChild(title);
+                slide.appendChild(projectItem);
+                coverflowProjects.appendChild(slide);
             });
 
-            initFeaturedProjectsCarousel();
+            initCoverFlowProjects();
         } catch (error) {
             console.error("Failed to load featured projects:", error);
         }
     }
 
-    function initFeaturedProjectsCarousel() {
+    function initCoverFlowProjects() {
         new Swiper("#featured-projects-swiper", {
             effect: "coverflow",
             grabCursor: true,
             centeredSlides: true,
-            slidesPerView: "auto",
+            slidesPerView: 3,
             coverflowEffect: {
                 rotate: 50,
                 stretch: 0,

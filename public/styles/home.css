@@ -150,20 +150,21 @@ body {
     text-decoration: underline;
 }
 
-/* Featured Projects Carousel */
-.featured-projects-carousel-container {
+/* Cover Flow Container */
+.coverflow-container {
     width: 100%;
     max-width: 90%;
     margin: 40px auto;
 }
 
-/* Swiper */
+/* Swiper Container */
 #featured-projects-swiper {
     width: 100%;
     height: 320px;
     position: relative;
 }
 
+/* Swiper Slides */
 .swiper-slide {
     display: flex;
     flex-direction: column;
@@ -172,14 +173,27 @@ body {
     transition: opacity 0.3s ease-in-out;
 }
 
-/* Swiper Images */
-.swiper-slide img {
+/* Swiper Project Items */
+.project-item {
+    background-color: grey;
+    padding: 25px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-item img {
     width: 100%;
     height: auto;
-    max-height: 250px;
-    object-fit: contain;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out, opacity 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.project-item h3 {
+    font-family: "Jacquard 12", sans-serif;
+    font-size: 2rem;
+    margin-top: 10px;
 }
 
 /* Loading Spinner */
