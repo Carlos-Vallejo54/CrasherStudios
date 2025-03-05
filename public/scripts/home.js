@@ -33,6 +33,7 @@ function closeLightbox() {
 // Load Featured Projects
 document.addEventListener("DOMContentLoaded", async function () {
     const coverflowProjects = document.getElementById("coverflow-projects");
+    let currentIndex = 0;
     const supportedImageFormats = ["png", "jpg", "jpeg", "webp", "gif", "JPG"];
 
     async function loadFeaturedProjects() {
@@ -45,62 +46,49 @@ document.addEventListener("DOMContentLoaded", async function () {
                 return;
             }
 
-            const selectedProjects = data.projects.sort(() => 0.5 - Math.random()).slice(0, 3);
-
-            selectedProjects.forEach(async (project) => {
-                const encodedProject = encodeURIComponent(project);
-                const projectFolder = `../images/Project/${encodedProject}`;
-                const mainImage = await findExistingImage(`${projectFolder}/${encodedProject} Main`);
-
-                let slide = document.createElement("div");
-                slide.classList.add("swiper-slide");
-
-                let projectItem = document.createElement("div");
+            data.projects.slice(0, 5).forEach((project) => {
+                const projectItem = document.createElement("div");
                 projectItem.classList.add("project-item");
 
                 let img = document.createElement("img");
-                img.src = mainImage;
-                img.alt = project;
-                img.onerror = () => {
-                    img.src = "../images/fallback.png";
-                };
-                projectItem.onclick = () => openProjectPopup(projectFolder, project);
+                img.src = `../images/Project/${encodeURIComponent(project)}/Main.png`;
+                img.onerror = () => { img.src = "../images/fallback.png"; };
 
                 let title = document.createElement("h3");
                 title.textContent = project;
 
                 projectItem.appendChild(img);
                 projectItem.appendChild(title);
-                slide.appendChild(projectItem);
-                coverflowProjects.appendChild(slide);
+                projectItem.onclick = () => openProjectPopup(`../images/Project/${encodeURIComponent(project)}`, project);
+                
+                coverflowProjects.appendChild(projectItem);
             });
 
-            initCoverFlowProjects();
+            updateSlidePosition();
         } catch (error) {
             console.error("Failed to load featured projects:", error);
         }
     }
 
-    function initCoverFlowProjects() {
-        new Swiper("#coverflow-home", {
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: 3,
-            coverflowEffect: {
-                rotate: 50,
-                stretch: 0,
-                depth: 300,
-                modifier: 1,
-                slideShadows: true,
-            },
-            loop: true,
-            navigation: {
-                nextEl: "#coverflow-home .swiper-button-next",
-                prevEl: "#coverflow-home .swiper-button-prev",
-            },
+    function moveSlide(direction) {
+        const slides = document.querySelectorAll(".project-item");
+        currentIndex = (currentIndex + direction + slides.length) % slides.length;
+        updateSlidePosition();
+    }
+
+    function updateSlidePosition() {
+        const slides = document.querySelectorAll(".project-item");
+        const container = document.querySelector(".coverflow-wrapper");
+        const offset = -currentIndex * (slides[0].offsetWidth + 20);
+        container.style.transform = `translateX(${offset}px)`;
+
+        slides.forEach((slide, index) => {
+            slide.classList.toggle("active", index === currentIndex);
         });
     }
+
+    document.querySelector(".coverflow-button.prev").addEventListener("click", () => moveSlide(-1));
+    document.querySelector(".coverflow-button.next").addEventListener("click", () => moveSlide(1));
 
     async function findExistingImage(basePath) {
         for (let ext of supportedImageFormats) {
