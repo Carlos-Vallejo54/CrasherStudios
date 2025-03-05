@@ -1,0 +1,253 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0f0f0f;
+}
+
+/* Title Styling */
+.projects-title {
+    text-align: center;
+    font-size: 5rem;
+    margin-top: 20px;
+    font-family: "Jacquard 12", sans-serif;
+    color: white;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+/* Projects Grid */
+.projects-container {
+    width: 85%;
+    margin: 0 auto;  
+    margin-bottom: 50px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center; 
+    align-items: center; 
+}
+
+.project-item {
+    background-color: grey;
+    padding: 25px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.project-item h3 {
+    font-family: "Jacquard 12", sans-serif;
+    font-size: 3rem;
+    margin-top: 10px;
+}
+
+/* Popup Styling */
+.popup {
+    display: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.popup-content {
+    background: grey;
+    padding: 40px;
+    width: 70%;
+    max-height: 80%;
+    align-items: center;
+    justify-self: center;
+    overflow-y: auto;
+    border-radius: 10px;
+    position: relative; 
+}
+
+/* Popup Fonts */
+.popup-title {
+    font-family: "Jacquard 12", sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.popup-year, .popup-note {
+    font-family: "Jacquarda Bastarda 9", sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#popup-description {
+    font-family: "Jacquarda Bastarda 9", sans-serif;
+    font-size: 2rem;
+    padding: 10px;
+    line-height: 1.5;
+}
+
+#popup-description p {
+    margin-top: 20px; 
+}
+
+.popup-label {
+    font-family: "Jacquard 12", sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.popup-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr)); 
+    gap: 20px;
+    justify-content: center; 
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.popup-grid img {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.2s ease-in-out;
+}
+
+.popup-grid img:hover {
+    transform: scale(1.2);
+}
+
+.popup-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.popup-content::-webkit-scrollbar-track {
+    background: #222; 
+    border-radius: 10px;
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+    background: #fff; 
+    border-radius: 10px;
+}
+
+.popup-content::-webkit-scrollbar-thumb:hover {
+    background: #bbb;
+}
+
+.close-popup {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 50%;
+    z-index: 1100;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-45%, -50%);
+    width: 75px;
+    height: 76px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid midnightblue;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 1100;
+    padding: 30px;
+    background-color: lightblue;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+    .projects-container {
+        width: 95%;
+    }
+
+    #projects-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .project-item {
+        width: 90%;
+    }
+
+    .popup-content {
+        width: 90%;
+        max-height: 90%;
+        padding: 20px;
+    }
+
+    .popup-title, .popup-year, .popup-note {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    
+    .popup-label {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    .popup-grid {
+        width: 100%;
+    }
+
+    .popup-grid img {
+        max-width: 95%; 
+    }
+
+    #popup-description {
+        font-size: 1.6rem; 
+    }
+
+    .close-popup {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        z-index: 1100;
+    }
+    
+}
+
