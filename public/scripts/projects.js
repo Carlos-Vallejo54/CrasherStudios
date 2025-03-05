@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         const loadingWrapper = document.getElementById("loading-wrapper");
         const loadingSpinner = document.getElementById("loading-spinner");
 
-        loadingWrapper.style.display = "block";
+        loadingWrapper.style.display = "flex";
         loadingSpinner.style.display = "block";
 
         try {
@@ -110,6 +110,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             console.error("Failed to load project details:", error);
         } finally {
 
+            loadingWrapper.style.display = "none";
             loadingSpinner.style.display = "none";
         }
     }
