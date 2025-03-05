@@ -56,7 +56,7 @@ body {
 
 /* Navigation Buttons */
 .swiper-button-next, .swiper-button-prev {
-    color: white !important;
+    color: 1d92be !important;
 }
 
 /* Pagination Dots */
@@ -150,4 +150,54 @@ body {
 .featured-projects a:hover {
     color: #FFD700; 
     text-decoration: underline;
+}
+
+/* Featured Projects Cover Flow Carousel */
+.coverflow-container {
+    width: 100%;
+    max-width: 90%;
+    margin: 40px auto;
+}
+
+/* Swiper Carousel */
+#featured-projects-carousel {
+    width: 100%;
+    height: 320px;
+    position: relative;
+}
+
+/* Swiper Slides */
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Swiper Images */
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Hide extra slides */
+.swiper-slide:not(.swiper-slide-active):not(.swiper-slide-prev):not(.swiper-slide-next) {
+    opacity: 0;  
+}
+
+/* Image Caption Under Carousel */
+.carousel-caption {
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+    font-family: "Jacquard 12", sans-serif;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
 }
