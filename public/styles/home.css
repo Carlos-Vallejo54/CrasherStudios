@@ -34,8 +34,9 @@ body {
 /* Responsive Banner Styling */
 .banner {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 40vw; 
+    max-height: 600px; 
+    min-height: 250px; 
     background-size: cover !important;
     background-position: center;
     background-repeat: no-repeat !important;
