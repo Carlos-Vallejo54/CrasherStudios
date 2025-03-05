@@ -21,7 +21,7 @@ body {
 .projects-container {
     width: 85%;
     max-width: 1200px; 
-    margin: 0 auto;  
+    margin: 15% auto;  
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -61,7 +61,7 @@ body {
 
 /* Popup Styling */
 .popup {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
@@ -79,6 +79,8 @@ body {
     padding: 40px;
     width: 70%;
     max-height: 80%;
+    align-items: center;
+    justify-content: center;
     overflow-y: auto;
     border-radius: 10px;
     position: relative; 
@@ -169,6 +171,8 @@ body {
     border-radius: 50%;
     animation: spin 1s linear infinite;
     z-index: 1100;
+    padding: 20px;
+    background-color: black;
 }
 
 @keyframes spin {
