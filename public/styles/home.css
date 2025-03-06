@@ -19,7 +19,7 @@ body {
 .welcome p {
     font-family: "Jacquarda Bastarda 9", serif;
     font-size: 1.5rem;
-    color: #1d92be;
+    color: skyblue;
 }
 
 /* Swiper Carousel */
@@ -73,7 +73,7 @@ body {
 .custom-section p {
     font-family: "Jacquarda Bastarda 9", serif;
     font-size: 2rem;
-    color: #1d92be;
+    color: skyblue;
     max-width: 1200px;
     text-align: center;
 }
@@ -127,7 +127,7 @@ body {
 
 .featured-projects p {
     font-size: 2rem;
-    color: #1d92be;
+    color: skyblue;
     text-align: left;
     font-family: "Jacquarda Bastarda 9", serif;
     margin-bottom: 5%;

@@ -54,19 +54,19 @@ body {
     font-size: 1.6vw;
     line-height: 1.6;
     margin: 10px 0;
-    color: #1d92be;
+    color: skyblue;
 }
 
 .about-me-content strong {
-    color: #1d92be;
+    color: skyblue;
 }
 .about-me-content a {
-    color: #1d92be;
+    color: skyblue;
 }
 
 .about-me-content ul {
     font-family: 'Jacquarda Bastarda 9', sans-serif;
-    color: #1d92be;
+    color: skyblue;
     list-style-type: disc;
     padding: 0;
 }
