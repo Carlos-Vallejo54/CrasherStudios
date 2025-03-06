@@ -167,7 +167,7 @@ body {
         flex-direction: column;
         align-items: center;
         top: 15%;
-        font-size: 2.5vw;
+        font-size: 4.5vw;
         gap: 10px;
     }
 
@@ -188,7 +188,7 @@ body {
 @media (max-width: 480px) {
     .menu {
         flex-direction: column;
-        top: 20%;
+        top: 12%;
         font-size: 6vw;
         padding: 5px 1vw;
         gap: 8px;

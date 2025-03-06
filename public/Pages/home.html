@@ -13,13 +13,13 @@
     <div id="header"></div>
 
     <div class="wrapper">
-        <!-- Main content -->
+        
         <section class="welcome">
             <h1>Welcome to Crasher Studios</h1>
             <p>If you don’t take risks, you can’t create a future!</p>
         </section>
 
-<!-- Swiper Carousel -->
+
 <div class="swiper-container">
     <div class="swiper-wrapper">
         <div class="swiper-slide" onclick="openLightbox('/images/banners/banner1.jpg')">
@@ -52,20 +52,16 @@
         </div>
     </div>
     
-    <!-- Lightbox for Banners -->
     <div id="banner-lightbox" class="lightbox hidden">
         <span class="close" onclick="closeLightbox()">&times;</span>
         <img id="banner-lightbox-img" src="" alt="Banner Preview">
     </div>        
     </div>
 
-    <!-- Swiper Pagination & Navigation -->
-    <div class="swiper-pagination"></div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
 </div>
-
-    <!-- Custom Section Below Banners --> 
+ 
     <section class="custom-section"> 
         <h2>About Crasher Studios</h2> 
         <p> Welcome to Crasher Studios, where creativity and 
@@ -75,7 +71,6 @@
             for the casuals. </p>
     </section>
 
-    <!-- Featured Projects Section -->
     <section class="featured-projects">
         <h2>Featured Projects</h2>
         <p>
@@ -83,9 +78,29 @@
             If you would like to check out the rest of my work, <a href="../Pages/projects.html">click here</a>.
         </p>
     </section>
-    </div>
 
-    <!-- Footer -->
+    <div class="coverflow-container">
+        <button class="coverflow-button prev" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="coverflow-slider">
+            <div class="coverflow-wrapper" id="coverflow-projects"></div>
+        </div>
+        <button class="coverflow-button next" onclick="moveSlide(1)">&#10095;</button>
+    </div>     
+
+    <div id="loading-spinner" class="loading-spinner"></div>
+
+    <div id="project-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-popup" onclick="closeProjectPopup()">&times;</span>
+            <h2 id="popup-title" class="popup-title"></h2>
+            <p id="popup-year" class="popup-year"></p>
+            <p id="popup-note" class="popup-note"></p>
+            <div id="popup-images" class="popup-grid"></div>
+            <h2 id="popup-label" class="popup-label">Description</h2>
+            <div id="popup-description"></div>
+        </div>
+    </div>    
+
     <div id="footer"></div>
 
     <script src="../scripts/loadHeaderFooter.js"></script>

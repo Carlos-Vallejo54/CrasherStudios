@@ -1,9 +1,6 @@
 /* General Page Styles */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
     background-color: #0f0f0f;
-    color: white;
     text-align: center;
 }
 
@@ -16,6 +13,7 @@ body {
 /* Apply Jacquard 12 font */
 .welcome h1, .quote {
     font-family: "Jacquard 12", sans-serif;
+    color: white;
 }
 
 .welcome p {
@@ -31,16 +29,16 @@ body {
     overflow: hidden;
 }
 
-/* Banner (full image size) */
+/* Responsive Banner Styling */
 .banner {
     width: 100%;
-    height: 600px;
-    background-size: cover !important; /* Maintain aspect ratio */
+    height: 40vw; 
+    background-size: cover !important;
     background-position: center;
     background-repeat: no-repeat !important;
 }
 
-/* Quote positioned below each banner */
+/* Adjust Quotes */
 .quote {
     width: 100%;
     text-align: center;
@@ -54,12 +52,7 @@ body {
 
 /* Navigation Buttons */
 .swiper-button-next, .swiper-button-prev {
-    color: white !important;
-}
-
-/* Pagination Dots */
-.swiper-pagination-bullet {
-    background: none !important;
+    color: #1d92be !important;
 }
 
 /* Left-Aligned Section Below the Banners */
@@ -68,11 +61,10 @@ body {
     max-width: 1400px;
     margin: 40px auto;
     text-align: center;
-    margin-top: 50px;
     padding: 10px 0;
 }
 
-.custom-section h2, .featured-projects h2, p {
+.custom-section h2, .featured-projects h2 {
     font-size: 4rem;
     font-family: "Jacquard 12", sans-serif;
     color: white;
@@ -121,7 +113,7 @@ body {
 .featured-projects {
     width: 90%;
     max-width: 1400px;
-    margin: 30px auto;
+    margin: 0px auto;
     color: white;
 }
 
@@ -138,6 +130,7 @@ body {
     color: #1d92be;
     text-align: left;
     font-family: "Jacquarda Bastarda 9", serif;
+    margin-bottom: 5%;
 }
 
 .featured-projects a {
@@ -148,4 +141,231 @@ body {
 .featured-projects a:hover {
     color: #FFD700; 
     text-decoration: underline;
+}
+
+/* Coverflow Container */
+.coverflow-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 90%;
+    height: 100%;
+    max-height: 1000px;
+    min-height: 600px;
+    margin: 0px auto;
+    margin-bottom: 10%;
+    position: relative;
+}
+
+/* Slider Wrapper */
+.coverflow-slider {
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+/* Slide Items */
+.coverflow-wrapper {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Coverflow Buttons */
+.coverflow-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5vw;
+    height: 5vw;
+    background: none;
+    color: #1d92be;
+    font-size: 5vw;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.coverflow-button.prev { left: 6%; }
+.coverflow-button.next { right: 6%; }
+
+/* Swiper Project Items */
+.project-item {
+    position: absolute;
+    background-color: grey;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.project-item h3 {
+    font-family: "Jacquard 12", sans-serif;
+    font-size: 2rem;
+    margin-top: 30px;
+}
+
+.project-item:not(.active) {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.project-item.active {
+    transform: scale(1.2);
+    opacity: 1;
+    z-index: 10;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-45%, -50%);
+    width: 75px;
+    height: 76px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid midnightblue;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 1100;
+    padding: 30px;
+    background-color: lightblue;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Project Popup */
+.popup {
+    display: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.popup-content {
+    background: grey;
+    padding: 40px;
+    width: 70%;
+    max-height: 80%;
+    align-items: center;
+    justify-self: center;
+    overflow-y: auto;
+    border-radius: 10px;
+    position: relative; 
+}
+
+/* Popup Fonts */
+.popup-title {
+    font-family: "Jacquard 12", sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.popup-year, .popup-note {
+    font-family: "Jacquarda Bastarda 9", sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#popup-description {
+    font-family: "Jacquarda Bastarda 9", sans-serif;
+    font-size: 2rem;
+    padding: 10px;
+    line-height: 1.5;
+}
+
+#popup-description p {
+    margin-top: 20px; 
+}
+
+.popup-label {
+    font-family: "Jacquard 12", sans-serif;
+    font-size: 4rem;
+    text-decoration: underline;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.popup-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr)); 
+    gap: 20px;
+    justify-content: center; 
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.popup-grid img {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.2s ease-in-out;
+}
+
+.popup-grid img:hover {
+    transform: scale(1.2);
+}
+
+.popup-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.popup-content::-webkit-scrollbar-track {
+    background: #222; 
+    border-radius: 10px;
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+    background: #fff; 
+    border-radius: 10px;
+}
+
+.popup-content::-webkit-scrollbar-thumb:hover {
+    background: #bbb;
+}
+
+.close-popup {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 1100;
 }
