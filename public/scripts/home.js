@@ -34,7 +34,7 @@ function closeLightbox() {
 document.addEventListener("DOMContentLoaded", async function () {
     const coverflowProjects = document.getElementById("coverflow-projects");
     let currentIndex = 0;
-    const supportedImageFormats = ["png", "jpg", "jpeg", "webp", "gif"];
+    const supportedImageFormats = ["png", "jpg", "jpeg", "webp", "gif", "JPG"];
 
     async function loadFeaturedProjects() {
         try {
