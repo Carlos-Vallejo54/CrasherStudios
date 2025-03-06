@@ -85,14 +85,20 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     function updateSlidePosition() {
         const slides = document.querySelectorAll(".project-item");
-        const container = document.querySelector(".coverflow-wrapper");
-
+        const totalSlides = slides.length;
         slides.forEach((slide, index) => {
             let offset = index - currentIndex;
-            if (offset < 0) offset += slides.length;
-            slide.style.transform = `translateX(${offset * 100}%) scale(${offset === 0 ? 1.2 : 0.8})`;
-            slide.style.opacity = offset === 0 ? "1" : "0";
-            slide.style.pointerEvents = offset === 0 ? "auto" : "none";
+            if (offset < 0) offset += totalSlides;
+            if (offset === 0) {
+                slide.style.transform = `translateX(0) scale(1.2)`;
+                slide.style.opacity = "1";
+                slide.style.pointerEvents = "auto";
+            } else {
+                const direction = offset < totalSlides / 2 ? -1 : 1;
+                slide.style.transform = `translateX(${direction * 200}%) scale(0.8)`;
+                slide.style.opacity = "0";
+                slide.style.pointerEvents = "none";
+            }
         });
     }
 
