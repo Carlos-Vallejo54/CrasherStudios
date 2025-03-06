@@ -21,13 +21,13 @@ header {
     padding: 15px 25px;
     background: url('../HeaderandFooter/header.jpg') no-repeat center center;
     background-size: cover;
-    height: 150px;
+    height: 250px;
     position: relative;
 }
 
 /* Logo */
 .logo img {
-    height: 100px; /* Adjust size if needed */
+    height: 9.5vw; 
 }
 
 /* Navigation */
@@ -63,15 +63,15 @@ nav ul li a:hover {
 
 /* === Mobile Menu Fixes === */
 .menu-toggle {
-    display: none; /* Hidden by default */
+    display: none;
     background: none;
     border: none;
     color: white;
-    font-size: 40px; /* Increase size */
+    font-size: 40px; 
     position: absolute;
     right: 20px;
     top: 50%;
-    transform: translateY(-50%); /* Center vertically */
+    transform: translateY(-50%); 
     cursor: pointer;
     z-index: 1001;
 }
@@ -80,7 +80,7 @@ nav ul li a:hover {
 .nav-menu {
     display: none;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.8);
     position: absolute;
     top: 50px;
     right: 0;
@@ -110,10 +110,10 @@ nav.active {
 /* Media query to handle larger screens */
 @media (min-width: 768px) {
     nav {
-        display: flex; /* or your desired display style */
+        display: flex; 
     }
     .menu-toggle {
-        display: none; /* Hide menu toggle button on larger screens */
+        display: none; 
     }
 }
 
@@ -132,8 +132,16 @@ nav.active {
 /* Responsive Menu Fix */
 @media screen and (max-width: 1024px) {
     .menu-toggle {
-        display: block; /* Make sure it's visible */
+        display: block; 
         right: 5%;
+    }
+
+    header {
+         height: 150px;
+    }
+
+    .logo img {
+        height: 18vw; 
     }
 
     /* Hide the menu initially */
@@ -143,7 +151,7 @@ nav.active {
         left: 0;
         width: 100%;
         background: rgba(0, 0, 0, 0.9);
-        display: none; /* Initially hidden */
+        display: none; 
         flex-direction: column;
         align-items: center;
         padding: 10px 0;
@@ -151,23 +159,23 @@ nav.active {
     }
 
     nav.show {
-        display: flex; /* Show the menu when toggled */
+        display: flex; 
     }
 
     nav ul {
         flex-direction: column;
         align-items: center;
         padding: 0;
-        width: auto; /* Make sure it's not stretching */
+        width: auto; 
     }
 
     nav ul li {
-        width: auto; /* Prevent stretching */
+        width: auto; 
     }
 
     nav ul li a {
         padding: 15px 30px;
         font-size: 18px;
-        width: auto; /* Keep button size natural */
+        width: auto; 
     }
 }

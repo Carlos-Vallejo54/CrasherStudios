@@ -218,7 +218,8 @@ body {
 .project-item h3 {
     font-family: "Jacquard 12", sans-serif;
     font-size: 2rem;
-    margin-top: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .project-item:not(.active) {
