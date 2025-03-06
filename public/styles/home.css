@@ -180,7 +180,7 @@ body {
     transform: translateY(-50%);
     width: 5vw;
     height: 5vw;
-    background: #0f0f0f;
+    background: none;
     color: #1d92be;
     font-size: 5vw;
     border: none;
@@ -189,8 +189,8 @@ body {
     z-index: 2;
 }
 
-.coverflow-button.prev { left: 10%; }
-.coverflow-button.next { right: 10%; }
+.coverflow-button.prev { left: 6%; }
+.coverflow-button.next { right: 6%; }
 
 /* Swiper Project Items */
 .project-item {
@@ -203,7 +203,6 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 350px;
     transition: transform 0.5s ease, opacity 0.5s ease;
-    flex-shrink: 0;
 }
 
 .project-item img {
@@ -216,6 +215,11 @@ body {
     font-family: "Jacquard 12", sans-serif;
     font-size: 2rem;
     margin-top: 30px;
+}
+
+.project-item:not(.active) {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .project-item.active {

@@ -33,8 +33,8 @@ function closeLightbox() {
 // Load Featured Projects
 document.addEventListener("DOMContentLoaded", async function () {
     const coverflowProjects = document.getElementById("coverflow-projects");
-    let currentIndex = 0;
     const supportedImageFormats = ["png", "jpg", "jpeg", "webp", "gif", "JPG"];
+    let currentIndex = 0;
 
     async function loadFeaturedProjects() {
         try {
@@ -86,11 +86,13 @@ document.addEventListener("DOMContentLoaded", async function () {
     function updateSlidePosition() {
         const slides = document.querySelectorAll(".project-item");
         const container = document.querySelector(".coverflow-wrapper");
-        const offset = -currentIndex * (slides[0].offsetWidth + 20);
-        container.style.transform = `translateX(${offset}px)`;
 
         slides.forEach((slide, index) => {
-            slide.classList.toggle("active", index === currentIndex);
+            let offset = index - currentIndex;
+            if (offset < 0) offset += slides.length;
+            slide.style.transform = `translateX(${offset * 100}%) scale(${offset === 0 ? 1.2 : 0.8})`;
+            slide.style.opacity = offset === 0 ? "1" : "0";
+            slide.style.pointerEvents = offset === 0 ? "auto" : "none";
         });
     }
 
