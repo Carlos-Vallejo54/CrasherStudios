@@ -42,33 +42,11 @@
         </div>
     </section>
 
-    <script>
-    document.getElementById('contact-form').addEventListener('submit', async function(event) {
-        event.preventDefault();
-    
-        let formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            message: document.getElementById('message').value
-        };
-    
-        let response = await fetch('/api/send-email', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
-        });
-    
-        if (response.ok) {
-            alert("Email sent successfully!");
-            document.getElementById('contact-form').reset();
-        } else {
-            alert("Error sending email.");
-        }
-    });
-    </script>
-
     <!-- Footer -->
     <div id="footer"></div>
+
+<!-- JavaScript -->
+<script defer src="../scripts/contactForm.js"></script>
 
 </body>
 </html>
