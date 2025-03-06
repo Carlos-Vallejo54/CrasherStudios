@@ -34,7 +34,7 @@ function closeLightbox() {
 document.addEventListener("DOMContentLoaded", async function () {
     const coverflowProjects = document.getElementById("coverflow-projects");
     let currentIndex = 0;
-    const supportedImageFormats = ["png", "jpg", "jpeg", "webp", "gif", "JPG"];
+    const supportedImageFormats = ["png", "jpg", "jpeg", "webp", "gif"];
 
     async function loadFeaturedProjects() {
         try {
@@ -46,12 +46,19 @@ document.addEventListener("DOMContentLoaded", async function () {
                 return;
             }
 
-            data.projects.slice(0, 5).forEach((project) => {
-                const projectItem = document.createElement("div");
+            const selectedProjects = data.projects.sort(() => Math.random() - 0.5).slice(0, 3);
+
+            for (const project of selectedProjects) {
+                const encodedProject = encodeURIComponent(project);
+                const projectFolder = `../images/Project/${encodedProject}`;
+                const mainImage = await findExistingImage(`${projectFolder}/${encodedProject} Main`);
+
+                let projectItem = document.createElement("div");
                 projectItem.classList.add("project-item");
 
                 let img = document.createElement("img");
-                img.src = `../images/Project/${encodeURIComponent(project)}/Main.png`;
+                img.src = mainImage;
+                img.alt = project;
                 img.onerror = () => { img.src = "../images/fallback.png"; };
 
                 let title = document.createElement("h3");
@@ -59,10 +66,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 
                 projectItem.appendChild(img);
                 projectItem.appendChild(title);
-                projectItem.onclick = () => openProjectPopup(`../images/Project/${encodeURIComponent(project)}`, project);
+                projectItem.onclick = () => openProjectPopup(projectFolder, project);
                 
                 coverflowProjects.appendChild(projectItem);
-            });
+            }
 
             updateSlidePosition();
         } catch (error) {
