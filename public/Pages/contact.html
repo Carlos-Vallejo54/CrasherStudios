@@ -13,10 +13,12 @@
     <!-- Header -->
     <div id="header"></div>
 
-    <!-- Contact Section -->
+    <!-- Contact Section (Wrapper for Centering) -->
     <section class="contact-section">
         <div class="contact-form">
             <h2>Contact Me</h2>
+
+            <form id="contact-form">
                 <label for="name">Name *</label>
                 <input type="text" id="name" name="name" required placeholder="Your Name...">
 
@@ -27,25 +29,25 @@
                 <textarea id="message" name="message" required placeholder="Your Message..."></textarea>
 
                 <button type="submit">Submit</button>
-            </form>
 
-            <!-- Social Media Icons Placed at the Bottom of Email Background -->
-            <div class="social-icons">
-                <a href="http://discordapp.com/users/274997493446606850" target="_blank">
-                    <img src="../images/Contact/discord.png" alt="Discord">
-                </a>
-                <a href="https://www.instagram.com/blue.d.crasher?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
-                    <img src="../images/Contact/instagram.png" alt="Instagram">
-                </a>
-            </div>
+                <!-- Social Media Icons Inside the Form -->
+                <div class="social-icons">
+                    <a href="https://discordapp.com/users/274997493446606850" target="_blank">
+                        <img src="../images/Contact/discord.png" alt="Discord">
+                    </a>
+                    <a href="https://www.instagram.com/blue.d.crasher?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+                        <img src="../images/Contact/instagram.png" alt="Instagram">
+                    </a>
+                </div>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
     <div id="footer"></div>
 
-<!-- JavaScript -->
-<script defer src="../scripts/contactForm.js"></script>
+    <!-- JavaScript -->
+    <script defer src="../scripts/contactForm.js"></script>
 
 </body>
 </html>
