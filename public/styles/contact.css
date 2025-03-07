@@ -31,11 +31,22 @@ body {
     max-width: 900px;
 }
 
+#contact-form {
+    width: 90%;
+}
+
 /* Form Elements */
 .contact-form h2 {
     font-size: 3vw;
     margin-bottom: 15px;
     text-align: center;
+}
+
+.contact-form p {
+    font-family: "Jacquarda Bastarda 9", sans-serif;
+    font-size: 1vw;
+    padding: 10px;
+    line-height: 1.5;
 }
 
 .contact-form label {

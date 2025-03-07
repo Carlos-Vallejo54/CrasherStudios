@@ -50,6 +50,7 @@ body {
 .project-item img {
     width: 100%;
     height: auto;
+    max-height: 750px;
     border-radius: 5px;
 }
 
