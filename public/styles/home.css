@@ -370,3 +370,9 @@ body {
     border-radius: 50%;
     z-index: 1100;
 }
+
+@media (max-width: 768px) {
+    .project-item img {
+        max-height: 400px;
+    }
+}

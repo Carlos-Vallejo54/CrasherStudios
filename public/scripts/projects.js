@@ -12,7 +12,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                 return;
             }
 
-            data.projects.forEach(async (project) => {
+            const shuffledProjects = data.projects.sort(() => Math.random() - 0.5);
+
+            shuffledProjects.forEach(async (project) => {
                 const encodedProject = encodeURIComponent(project);
                 const projectFolder = `../images/Project/${encodedProject}`;
                 const mainImage = await findExistingImage(`${projectFolder}/${encodedProject} Main`);
@@ -41,7 +43,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         } catch (error) {
             console.error("Failed to load projects:", error);
         }
-    }
+    }    
 
     async function findExistingImage(basePath) {
         for (let ext of supportedImageFormats) {
