@@ -19,13 +19,13 @@ export default async function handler(req, res) {
     const mailOptions = {
         from: email,
         to: 'bluedcrasher@gmail.com',
-        subject: `New Contact Form Submission from ${name}`,
+        subject: `Crasher Studios Contact Form Submission from ${name}`,
         text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
     };
 
     try {
         await transporter.sendMail(mailOptions);
-        return res.status(200).json({ message: 'Email sent successfully!' });
+        return res.status(200).json({ message: 'Email sent!' });
     } catch (error) {
         console.error(error);
         return res.status(500).json({ message: 'Error sending email.' });
