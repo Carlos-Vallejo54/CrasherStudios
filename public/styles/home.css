@@ -153,7 +153,7 @@ body {
     height: 100%;
     max-height: 1000px;
     min-height: 600px;
-    margin: 0px auto;
+    margin: 5% auto;
     margin-bottom: 10%;
     position: relative;
 }
@@ -205,13 +205,13 @@ body {
     margin: 20px;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 350px;
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .project-item img {
     width: 100%;
     height: auto;
+    max-height: 600px;
     border-radius: 5px;
 }
 
